@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    <script>
+        let inputVatly;
+        let inputHoahoc;
+        let inputSinhhoc;
+
+        inputVatly = prompt("nhap vao diem vat ly:");
+        inputHoahoc = prompt("nhap vao diem hoa hoc");
+        inputSinhhoc = prompt("nhap vao diem sinh hoc");
+
+        let diemVatly = parseFloat(inputVatly);
+        let diemHoahoc = parseFloat(inputHoahoc);
+        let diemSinhhoc = parseFloat(inputSinhhoc);
+
+        let total = (diemHoahoc+diemHoahoc+diemSinhhoc)/3;
+        
+        document.write("Total:"+total);
+
+    </script>
+</body>
+</html>
