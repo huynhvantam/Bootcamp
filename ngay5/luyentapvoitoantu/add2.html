@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+
+<body>
+    <script>
+        input = prompt("Message", '');
+        // if (input == 'Employee') {
+        //     alert('Hello');
+        // } else if (input == 'Director') {
+        //     alert('Greetings');
+        // } else if (input == '') {
+        //     alert('No login');
+        // } else
+        //     alert('bam lai');
+
+        // let message;
+        // if (login == 'Employee') {
+        //     message = 'Hello';
+
+        // } else if (login == 'Director') {
+        //     message = 'Greetings';
+        // } else if (login == '') {
+        //     message = 'No login';
+        // } else {
+        //     message = '';
+        // }
+
+        let message = (input == 'Employee') ?
+            'Hello' :
+            (input == 'Director') ?
+            'Greetings' :
+            (input == '') ?
+            'No login' :
+            '';
+        alert(message);
+    </script>
+</body>
+
+</html>
