@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+
+<body>
+    <input type="number" id="nhapsothang" />
+    <input type="button" id="click" value="Click Me" onclick="tinhsongay();" />
+    <script>
+        function tinhsongay() {
+            var inputsothang = +document.getElementById('nhapsothang').value;
+            switch (inputsothang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    alert('thang' + inputsothang + 'co 31 ngay');
+                    break;
+                case 1:
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    alert('thang' + inputsothang + 'co 30 ngay');
+                    break;
+                case 2:
+                    alert('thang' + inputsothang + 'co 28 ngay');
+                    break;
+                default:
+                    alert('ban nhap sai');
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

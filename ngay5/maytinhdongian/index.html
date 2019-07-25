@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        .fon {
+            color: red
+        }
+
+        .fon1 {
+            color: blue
+        }
+
+        .fon2 {
+            color: green
+        }
+
+        .fon3 {
+            color: brown
+        }
+
+        .fon3 {
+            color: maroon
+        }
+    </style>
+</head>
+
+<body>
+
+    <FORM name="form1">
+        <table border=2 bordercolor="red" width=174>
+            <tr>
+                <td><INPUT TYPE="text" NAME="tex1" size=22 maxlength=0></td>
+            </tr>
+            <table border=2 bordercolor="green">
+                <tr>
+                    <td width=38><INPUT TYPE="button" value="   1   " class="fon1" onClick="txtf(1)"></td>
+                    <td width=10><INPUT TYPE="button" value="   2   " class="fon1" onClick="txtf(2)"></td>
+                    <td width=10><INPUT TYPE="button" value="   3   " class="fon1" onClick="txtf(3)"></td>
+                    <td width=10><INPUT TYPE="button" value="   +   " class="fon2" onClick="operator('+')"></td>
+                </tr>
+                <tr>
+
+                    <td width=10><INPUT TYPE="button" value="   4   " class="fon1" onClick="txtf(4)"></td>
+                    <td width=10><INPUT TYPE="button" value="   5   " class="fon1" onClick="txtf(5)"></td>
+                    <td width=10><INPUT TYPE="button" value="   6   " class="fon1" onClick="txtf(6)"></td>
+                    <td width=10><INPUT TYPE="button" value="    -   " class="fon2" onClick="operator('-')"></td>
+                </tr>
+                <tr>
+                    <td width=10><INPUT TYPE="button" value="   7   " class="fon1" onClick="txtf(7)"></td>
+                    <td width=10><INPUT TYPE="button" value="   8   " class="fon1" onClick="txtf(8)"></td>
+                    <td width=10><INPUT TYPE="button" value="   9   " class="fon1" onClick="txtf(9)"></td>
+                    <td width=10><INPUT TYPE="button" value="    /   " class="fon2" onClick="operator('/')"></td>
+                </tr>
+                <tr>
+                    <td width=10><INPUT TYPE="button" value="   0   " class="fon1" onClick="txtf(0)"></td>
+                    <td width=10><INPUT TYPE="button" value="   .    " class="fon1" onClick="txtf('.')"></td>
+                    <td width=10><INPUT TYPE="button" value="   =   " class="fon3" onClick="equ()"></td>
+                    <td width=38><INPUT TYPE="button" value="   *   " class="fon2" onClick="operator('*')"></td>
+                </tr>
+                <tr>
+                    <td width=10><INPUT TYPE="button" value=" sqrt" class="fon4" onClick="sqrt1()"></td>
+                    <td width=10><INPUT TYPE="button" value=" sin " class="fon4" onClick="sin1()"></td>
+                    <td width=10><INPUT TYPE="button" value=" cos" class="fon4" onClick="cos1()"></td>
+                    <td width=10><INPUT TYPE="button" value=" tan " class="fon4" onClick="tan1()"></td>
+                </tr>
+                <tr>
+                    <td colspan=4><INPUT TYPE="button" value="                AC               " class="fon"
+                            onClick="ac()"></td>
+                </tr>
+
+            </table>
+        </table>
+    </FORM>
+    </font>
+    </blink>
+    </font>
+    <!--
+                        This script downloaded from www.JavaScriptBank.com
+                        Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+                    -->
+    <SCRIPT LANGUAGE="JavaScript">
+        // johns221b.50megs.com
+        var txt = "",
+            flag1 = 1,
+            flag = 1,
+            value = 0,
+            ans = 0,
+            oper = "!",
+            an = 0,
+            flag2 = 2
+
+        function txtf(A) {
+            txt = txt + A
+            document.form1.tex1.value = txt
+            if (flag1 == 0) flag = 2
+
+            an = eval(document.form1.tex1.value)
+        }
+
+
+        function operator(B) {
+            if (flag == 1) {
+                value = eval(document.form1.tex1.value)
+                flag1 = 0;
+                oper = B
+                txt = ""
+
+            } else {
+                calculate()
+                oper = B
+                flag = 1
+                an = eval(document.form1.tex1.value)
+
+            }
+        }
+
+        function equ() {
+            if (flag2 != 2) {
+                value = an
+            }
+            calculate()
+            flag2 = 3
+        }
+
+
+
+        function calculate() {
+
+            if (oper == "+") ans = value + eval(document.form1.tex1.value)
+
+            else if (oper == "-") ans = value - eval(document.form1.tex1.value)
+
+            else if (oper == "*") ans = value * eval(document.form1.tex1.value)
+
+            else if (oper == "/") ans = value / eval(document.form1.tex1.value)
+
+            else if (oper == "!") ans = document.form1.tex1.value
+
+            document.form1.tex1.value = ans
+            value = eval(document.form1.tex1.value)
+            txt = ""
+        }
+
+
+
+        function ac() {
+            txt = "";
+            flag1 = 1;
+            flag = 1;
+            value = 0;
+            ans = 0;
+            document.form1.tex1.value = 0;
+            oper = "!", an = 0, flag2 = 2
+        }
+
+        function sqrt1() {
+            document.form1.tex1.value = (Math.sqrt(eval(document.form1.tex1.value)))
+        }
+
+        function sin1() {
+            document.form1.tex1.value = (Math.sin(eval(document.form1.tex1.value)))
+        }
+
+        function cos1() {
+            document.form1.tex1.value = (Math.cos(eval(document.form1.tex1.value)))
+        }
+
+        function tan1() {
+            document.form1.tex1.value = (Math.tan(eval(document.form1.tex1.value)))
+        } //-->
+    </SCRIPT>
+</body>
+
+</html>
