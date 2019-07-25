@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        <form>
+                <img id="idAnh" src="1.png" />
+                <p>Click button below to move the image to right</p>
+        </form>
+        
+            <input type="button" value="Click right" onclick="moveRight();" />
+            <input type="button" value="Click left" onclick="moveleft();" />
+            <input type="button" value="Click up" onclick="moveup();" />
+            <input type="button" value="Click down" onclick="movedown();" />
+        <script>
+           let inputPNG = null;
+            // inputPNG = document.getElementById('idAnh');
+
+            function init() {
+                    inputPNG = document.getElementById('idAnh');
+                    inputPNG.style.position = 'relative';
+                    inputPNG.style.left = '0';
+                    inputPNG.style.top = '0';
+            }
+
+            function moveRight() {
+                inputPNG.style.left = parseInt(inputPNG.style.left) + 10 + 'px';
+            }
+            function moveleft() {
+                    inputPNG.style.left = parseInt(inputPNG.style.left) + (-10) + 'px';
+            }
+            function moveup() {
+                inputPNG.style.top = parseInt(inputPNG.style.top) + -10 + 'px';
+            }
+            function movedown() {
+                inputPNG.style.top = parseInt(inputPNG.style.top) + 10 + 'px';
+            }
+
+
+
+            window.onload = init;
+            </script>
+</body>
+</html>

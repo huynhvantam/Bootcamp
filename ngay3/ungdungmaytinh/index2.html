@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+   
+</head>
+<body>
+    <h1>Caculator</h1>
+    <input type = "number" id = "inputA">
+    <input type = "number" id = "inputB">
+    <br/> <br/>
+    <button type ="button" id="cong" onclick="nhancong()">Addition(+)</button>
+    <button type ="button" id="tru" onclick="nhantru()">Addition(-)</button>
+    <button type ="button" id="nhan" onclick="nhannhan()">Addition(*)</button>
+    <button type ="button" id="chia" onclick="nhanchia()">Addition(/)</button>
+
+    <br/> <br/>
+    <div id="outputHTML"></div>
+
+    <script>
+         
+            
+            var numberA = parseFloat(document.getElementById('inputA').value);
+             var numberB = parseFloat(document.getElementById('inputB').value);
+            
+        function nhancong() {
+            
+           
+            document.getElementById('outputHTML').innerHTML = numberA + numberB ;
+       
+        }
+
+        function nhantru() {
+            
+            
+            document.getElementById('outputHTML').innerHTML = numberA - numberB ;
+       
+        }
+        function nhannhan() {
+            
+         
+            document.getElementById('outputHTML').innerHTML = numberA * numberB ;
+       
+        }
+        function nhanchia() {
+            
+          
+            document.getElementById('outputHTML').innerHTML = numberA / numberB ;
+       
+        }
+    </script>
+</body>
+</html>
