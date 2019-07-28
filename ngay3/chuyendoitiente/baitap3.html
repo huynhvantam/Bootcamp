@@ -16,7 +16,7 @@
                 <th>To currency</th>
             </tr>
             <tr>
-                <td><input type = "number" id="money" min="0"></td>
+                <td><input type = "number" id="money" min="0"></td> // input vào sẽ là value
                 <td>
                     <select name = "city" id="fromMoney">
                         <option value="VN">Viet Nam</option>
@@ -47,6 +47,14 @@
             }
             if (fromMoneyy == 'USD' && toMoneyy == 'VN') {
                 document.getElementById('quy').innerHTML = number * 23000;
+            }
+            if (fromMoneyy == 'USD' && toMoneyy == 'USD') {
+                document.getElementById('quy').innerHTML = number * 1;
+                
+            }
+            if (fromMoneyy == 'VN' && toMoneyy == 'VN') {
+                document.getElementById('quy').innerHTML = number * 1;
+                
             }
         }
         </script>
