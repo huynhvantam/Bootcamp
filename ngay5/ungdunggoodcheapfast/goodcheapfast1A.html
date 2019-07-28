@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <input type="button" id="idA" value="A" onclick="clickA()">
+    <input type="button" id="idB" value="B" onclick="clickB()"> 
+    <input type="button" id="idC" value="C" onclick="clickC()">
+    <p id="pA"></p>
+    <p id="pB"></p>
+    <p id="pC"></p>
+
+    <script>
+       function clickA(){
+            document.getElementById("idA").value = "AA";
+            
+        }
+        function clickB(){
+            document.getElementById("idB").value = "BB";
+            
+        }
+        function clickC(){
+            document.getElementById("idC").value = "CC";
+            
+        }
+    </script>
+</body>
+</html>

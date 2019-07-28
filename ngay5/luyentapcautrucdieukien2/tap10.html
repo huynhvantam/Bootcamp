@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p>Giá bán lẻ điện sinh hoạt<br>
+                       Bậc 1: Cho kWh từ 0 - 50<br>
+                        1.678<br>
+                         Bậc 2: Cho kWh từ 51 - 100<br>
+                        1.734   <br>
+                        Bậc 3: Cho kWh từ 101 - 200<br>
+                        2.014<br>
+                         
+                        Bậc 4: Cho kWh từ 201 - 300<br>
+                        2.536<br>
+                         Bậc 5: Cho kWh từ 301 - 400   <br>    
+                        2.834 <br>
+                         Bậc 6: Cho kWh từ 401 trở lên<br>
+                        2.927</p>
+    Nhap so kWh <input id="idA" type="number"><br>
+    
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <br>
+    <p1 id="output"></p1>
+    <p1 id="output1"></p1>
+    <script>
+       function clickOK() {
+            var A = +document.getElementById("idA").value;
+            
+            if (A>400) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  (A-400)*2.927+ 50*1.678 + 50*1.734+ 100*2.014+ 100*2.534+ 100*2.834;
+           }
+            else if (A>300) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  (A-300)*2.834+ 50*1.678 + 50*1.734+ 100*2.014+ 100*2.534;
+           }
+            else if (A>200) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  (A-200)*2.534+ 50*1.678 + 50*1.734 + 100*2.014;
+           }
+            else if (A>100) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  (A-100)*2.014+ 50*1.678 + 50*1.734;
+           }
+           else if (A>50) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  (A-50)*1.734+ 50*1.678;
+           }
+           else if (A>0) {
+            document.getElementById('output').innerHTML = "so tien dien la:";
+               document.getElementById('output1').innerHTML =  A*1.678;
+           }
+    
+       }
+    </script>
+</body>
+</html>

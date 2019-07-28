@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+<input type="number" id="idNumber" >
+<input type="button" id="idButton" value="OK" onclick="clickOK()">
+    <script>
+    //let num = prompt("Enter your number: ");
+  let total = 0;
+    function clickOK() {
+        var num= +document.getElementById("idNumber").value;
+         for (let i = 1; i <= num; i++) {
+            total = total + i;
+           document.write(total + "<br>");}
+    }  
+    </script>
+</body>
+</html>

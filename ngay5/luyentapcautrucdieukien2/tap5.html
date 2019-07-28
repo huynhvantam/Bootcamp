@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhap A <input id="idA" type="number"><br>
+    Nhap B <input id="idB" type="number">
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <h1 id="output"></h1>
+    <script>
+       function clickOK() {
+            var inputA = +document.getElementById("idA").value;
+            var inputB = +document.getElementById("idB").value;
+         
+                document.getElementById('output').innerHTML = " diện tích tam giác vuông: "+ inputA*inputB/2;
+        
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập điểm các bài kiểm tra <input id="idA" type="number"><br>
+    Nhập điểm các bài giữa kỳ. <input id="idB" type="number"><br>
+    Nhập điểm các bàn cuối kỳ  <input id="idC" type="number">
+    <!-- quy ước điểm kiểm ra x1
+                điểm giữa kỳ x2  
+                điểm cuối kỳ x3
+                tổng chia 6 -->
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <h1 id="output"></h1>
+    <script>
+       function clickOK() {
+            var inputA = +document.getElementById("idA").value;
+            var inputB = +document.getElementById("idB").value;
+            var inputC = +document.getElementById("idC").value;
+           var total = (inputA + inputB * 2 + inputC * 3 )/6;
+
+           if (total >=9 && total<=10) {
+            document.getElementById('output').innerHTML = " HỌC SINH GIỎI ";
+           }
+            if (total <9 && total >=7) {
+            document.getElementById('output').innerHTML = " HỌC SINH KHÁ ";
+           }
+           if (total <7 && total >=5) {
+            document.getElementById('output').innerHTML = " HỌC SINH TRNNG BÌNH ";
+           }
+           if (total <5 && total >=0){
+            document.getElementById('output').innerHTML = " HỌC SINH YẾU ";
+           }
+           if (total <0 || total >10){
+            document.getElementById('output').innerHTML = " Nhap sai";
+           }
+       }
+    </script>
+</body>
+</html>

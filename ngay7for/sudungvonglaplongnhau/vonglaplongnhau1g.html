@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+        <script>
+            let doc,ngang;
+            let sum ="<table border ='1'>";
+            doc=ngang=1;
+            while(doc<=5) {
+                sum= sum+ "<tr>"
+                while(ngang<=10) {
+
+                    sum=sum +"<td>"+doc*ngang+"</td>";
+                    ngang++;
+                   
+                }
+                ngang=1;
+                sum= sum+"</tr>";
+                doc++;
+               
+            
+            }
+            sum= sum+"</table>"
+            document.write(sum);
+                </script>
+</body>
+</html>

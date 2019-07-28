@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p>tính thuế thu nhập cá nhân<br>
+                       Bậc 1: <br>
+                       4 triệu đồng/tháng 0%<br>
+                         Bậc 2: <br>
+                         Trên 4 - 6 triệu đồng/tháng: 5%   <br>
+                        Bậc 3:<br>
+                        Trên 6 - 9 triệu đồng: 10%<br>
+                         
+                        Bậc 4: <br>
+                        Trên 9 - 14 triệu đồng/tháng: 15%<br>
+                         Bậc 5:  <br>    
+                         trên 14 - 24 triệu đồng/tháng: 20% <br>
+                         Bậc 6: <br>
+                         Trên 24 triệu đồng/tháng: 25%</p>
+   Nhập số lương của bạn <input id="idA" type="number"><br>
+    
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <br>
+    <p1 id="output"></p1>
+    <p1 id="output1"></p1>
+    <script>
+       function clickOK() {
+            var A = +document.getElementById("idA").value;
+            
+            if (A>24) {
+            document.getElementById('output').innerHTML = "Trên 24 triệu đồng/tháng: 25% là: ";
+               document.getElementById('output1').innerHTML = A*25/100 +" triệu";
+           }
+            else if (A>14) {
+                document.getElementById('output').innerHTML = "trên 14 - 24 triệu đồng/tháng: 20% là: ";
+               document.getElementById('output1').innerHTML = A*20/100 +" triệu";
+           }
+            else if (A>9) {
+                document.getElementById('output').innerHTML = "Trên 9 - 14 triệu đồng/tháng: 15% là: ";
+               document.getElementById('output1').innerHTML = A*15/100 +" triệu";
+           }
+            else if (A>6) {
+                document.getElementById('output').innerHTML = "Trên 6 - 9 triệu đồng: 10% là: ";
+               document.getElementById('output1').innerHTML = A*10/100 +" triệu";
+           }
+           else if (A>4) {
+            document.getElementById('output').innerHTML = "Trên 4 - 6 triệu đồng/tháng: 5%: ";
+               document.getElementById('output1').innerHTML = A*5/100 +" triệu";
+           }
+           else if (A>0) {
+            document.getElementById('output').innerHTML = "dưới 4 triệu đồng/tháng 0%: ";
+          //
+           }
+    
+       }
+    </script>
+</body>
+</html>

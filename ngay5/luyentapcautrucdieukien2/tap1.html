@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhap do C <input id="idA" type="number"><br>
+    Nhap nhap do F <input id="idB" type="number">
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <h1 id="output"></h1>
+    <h1 id="output1"></h1>
+    <script>
+       function clickOK() {
+            var inputA = +document.getElementById("idA").value;
+            var inputB = +document.getElementById("idB").value;
+            //°C  x  9/5 + 32 = °F
+            var A = inputA;
+            var B = inputB;
+            var doF = A*9/5+32;
+            var doC = (B-32) *5/9;
+        
+                document.getElementById('output').innerHTML = "nhiet do F la: "+doF;
+            
+                document.getElementById('output1').innerHTML = "nhiet do C la: "+doC;
+            
+        }
+    </script>
+</body>
+</html>

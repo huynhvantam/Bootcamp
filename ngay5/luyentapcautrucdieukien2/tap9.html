@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.<br> Điều kiện để a,b,c là cạnh của một tam giác là:
+    <br>a,b,c > 0;;
+    a + b > c;;
+    b + c > a;;
+    a + c > b</h1>
+    Nhap A <input id="idA" type="number"><br>
+    Nhap B <input id="idB" type="number"><br>
+    Nhap C <input id="idC" type="number">
+    <input id="idOK" type="button" value="OK" onclick="clickOK()">
+    <br>
+    <h1 id="output"></h1>
+    <script>
+       function clickOK() {
+            var A = +document.getElementById("idA").value;
+            var B = +document.getElementById("idB").value;
+            var C = +document.getElementById("idC").value;
+            if (A >0 && B>0 && C>0) {
+                if ((A +B >C) && (B+C>A) && (A+C>B)) {
+                    document.getElementById("output").innerHTML = " a,b,c là cạnh của một tam giác";
+                }
+                else {
+                document.getElementById("output").innerHTML = " a,b,c KHÔNG là cạnh của một tam giác";}
+            } else 
+            document.getElementById("output").innerHTML = " nhap sai";
+        }
+    </script>
+</body>
+</html>
