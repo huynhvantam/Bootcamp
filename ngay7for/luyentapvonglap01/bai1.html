@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <h2>Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành. <br>
+        Nhập A <input id="idA" type="number"><br>
+        <!-- Nhập B <input id="idA" type="number"> -->
+        <input value="OK" type="button" onclick="clickOK()">
+    </h2>
+    <p id="output"></p>
+
+    <script>
+        function clickOK() {
+            var num = +document.getElementById('idA').value;
+            for (var i = 0; i <= num; i++) {
+                document.write('số ' + i + '<br>');
+                if (i == 99) {
+                    alert('đã hoàn thành');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

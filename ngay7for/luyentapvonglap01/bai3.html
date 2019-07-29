@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <h2>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.. <br>
+        <!-- Nhập A <input id="idA" type="number"><br>
+        Nhập B <input id="idA" type="number">
+        <input value="OK" type="button" onclick="clickOK()"> -->
+
+    </h2>
+    <p id="output"></p>
+
+    <script>
+        function fibonacci(num) {
+            var a = 1,
+                b = 0,
+                temp;
+            while (num >= 0) {
+                temp = a;
+                a += b;
+                b = temp;
+                num--;
+            }
+            return b;
+        }
+        docum.write(fibonacci(5));
+    </script>
+</body>
+
+</html>
