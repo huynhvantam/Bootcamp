@@ -9,21 +9,25 @@
 </head>
 <body>
                 <p>FAST</p>
-                    <input  id="01" value="GOOD"  type="checkbox" onclick="fast();" />
+                    <input  id="01"  value="GOOD" type="button" onclick="fast();" />
                 <p>CHEAP</p> 
-                    <input  id="02" value="CHEAP" type="checkbox" onclick="cheap();"/>
+                    <input  id="02" value="CHEAP" type="button" onclick="cheap();"/>
                 <p>GOOD</p>
-                    <input  id="03"  value="FAST" type="checkbox" onclick="good();" /> 
+                    <input  id="03"  value="FAST"type="button" onclick="good();" /> 
              
 <script>
     function fast(){
-    let a = document.getElementById("01").checked;
-    let b = document.getElementById("02").checked;
-    let c = document.getElementById("03").checked;
+    let a = document.getElementById("01").value;
+    let b = document.getElementById("02").value;
+    let c = document.getElementById("03").value;
+    
 
-    if(a)
-        if(b)
-        document.getElementById("03").checked = false;
+
+    if(a==GOOD) {
+
+    }
+        else 
+        a.value =good;
         
     }
     function cheap(){

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+        <table>
+                <tr>
+                    <td colspan="5"  ><input id="idHienthi" type="text"/></td>
+                </tr>
+                <tr>
+                    <!-- //onclick="idHienthi.value+=this.value -->
+                    <td><input  type="button" value="0" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="1" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="2" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="3" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="4" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="5" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="6" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="7" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="8" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="9" onclick="idHienthi.value+=this.value"></td>
+                    <td><input  type="button" value="." onclick="idHienthi.value+=this.value"/> </td>
+                    <td><input  type="button" value="/" onclick="idHienthi.value+=this.value"/> </td>
+                    <td><input  type="button" value="*" onclick="idHienthi.value+=this.value"/> </td>
+                    <td><input  type="button" value="+" onclick="idHienthi.value+=this.value"/> </td>
+                    <td><input  type="button" value="-" onclick="idHienthi.value+=this.value"/> </td>
+                </tr>
+                <tr>
+                        <td><input  type="button" value="<<" onclick="idHienthi.value=idHienthi.value.substr(0,idHienthi.value.length-1)"/> </td>
+                        <td ><input id="euq"  type="button" value="=" onclick="idHienthi.value = eval(idHienthi.value)"/> </td>
+                       
+
+                </tr>
+                </table>
+</body>
+</html>
