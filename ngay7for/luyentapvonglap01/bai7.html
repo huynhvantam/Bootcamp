@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    100 so chia het cho 5 va 3<br>
+    nhap a<input id="idA" type="number"><br>
+    <!-- Nhập B <input id="idA" type="number"> -->
+    <input value="OK" type="button" onclick="clickOK()">
+    <script>
+        function clickOK() {
+            // var dem =0;
+            // var tong = 0;
+            // var number = +document.getElementById('idA').value;
+            for (var i = 1; i <= 100; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    document.write(i + ' chia het 3 va 5 <br>');
+                } else if (i % 3 == 0) {
+                    document.write(i + ' chia het 3  <br>');
+                } else if (i % 5 == 0) {
+                    document.write(i + ' chia het 5 <br>');
+                } else document.write(i + ' <br>');
+
+            }
+        }
+    </script>
+</body>
+
+</html>
