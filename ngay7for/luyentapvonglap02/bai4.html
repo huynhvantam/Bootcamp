@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var doc = +prompt('nhap chieu doc');         
+            for (;doc<=0;) {
+                doc = +prompt('nhap lai chieu doc');
+            }
+        var ngang = +prompt('nhap chieu ngang');
+            for (;ngang<=0;) {
+                ngang = +prompt('nhap lai chieu ngang');
+            }
+            var sum ='';
+            var sao ='*';
+            var sumdoc ='';
+        for (var i=1;i<=doc;i++) {
+            for (var y=1; y<=ngang; y++) {
+                
+
+                 
+                sum=sum+sao;
+                document.write(sum +'<br>');
+            }
+            sumdoc=sumdoc+sao;
+            document.write(sumdoc);
+        }
+
+
+    </script>
+</body>
+</html>

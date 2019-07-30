@@ -21,14 +21,26 @@
 
     <script>
         // function clickOK() {
+
+           
         var num = +prompt('nhập nhiệt độ hiện tại:');
-        if (num >= 100) {
+        for (;num>20 && num<100;) {
+            num = +prompt('nhập nhiệt độ hiện tại:');}
+        for (;num>=100;) {
             alert('giảm nhiệt độ đi');
-        } else if (num <= 20) {
-            alert('tăng nhiệt độ đi');
-        } else {
-            alert('nhập sai');
+            break;
         }
+        for (;num<=20;) {
+            alert('tăng nhiệt độ đi');
+            break;
+        }
+        // if (num >= 100) {
+        //     alert('giảm nhiệt độ đi');
+        // } else if (num <= 20) {
+        //     alert('tăng nhiệt độ đi');
+        // } else {
+        //     alert('nhập sai');
+        // }
     </script>
 </body>
 

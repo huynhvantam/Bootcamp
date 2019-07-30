@@ -10,21 +10,27 @@
 </head>
 
 <body>
-    nhap N in ra cac so chia het cho 2 đầu tiên <br>
+    nhap N là tổng các số đầu chia hết cho 2<br>
     nhap a<input id="idA" type="number"><br>
         <!-- Nhập B <input id="idA" type="number"> -->
         <input value="OK" type="button" onclick="clickOK()"> 
     <script>
         function clickOK() {
             var dem =0;
+            var tong = 0;
             var number = +document.getElementById('idA').value;
             for (var i=1;;i++) {
                 if (i%2==0) {
                     dem=dem+1;
                     document.write(i+'<br>'); 
+                    tong = tong +i;
                     if (dem==number){
+                        document.write('-------------------------<br>'); 
+                    document.write(tong+'<br>'); 
                         break;
+
                     }  
+                    
                 }
                  
             }   

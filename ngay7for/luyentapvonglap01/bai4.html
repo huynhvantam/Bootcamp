@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    nhap N in ra cac so chia het cho 2 đầu tiên <br>
+        Tìm số đầu tiên trong dãy fibonacci chia hết cho 5. (nhung lam san chia het cho 2)<br>
     nhap a<input id="idA" type="number"><br>
         <!-- Nhập B <input id="idA" type="number"> -->
         <input value="OK" type="button" onclick="clickOK()"> 
@@ -19,12 +19,11 @@
             var dem =0;
             var number = +document.getElementById('idA').value;
             for (var i=1;;i++) {
-                if (i%2==0) {
+                if (i%5==0) {
                     dem=dem+1;
-                    document.write(i+'<br>'); 
-                    if (dem==number){
-                        break;
-                    }  
+                    document.write(i+' chia hết cho 5 <br>'); 
+                    break;
+                     
                 }
                  
             }   
