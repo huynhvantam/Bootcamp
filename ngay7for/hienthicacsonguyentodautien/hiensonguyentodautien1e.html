@@ -13,12 +13,11 @@
        // var inputSNT = +prompt("nhap so vao");
         
     function kiem_tra_snt() {
-      
-            var nii = +document.getElementById('idSNT').value;
+           
+            var number = +document.getElementById('idSNT').value;
             var flag = true;
-            var dem =0;
             var n;
-                for(n=0 ; n<=10000 ; n++){
+                for(n=0 ; n<=number ; n++){
             if (n < 2){
                 flag = false;}
             else if (n == 2){
@@ -37,14 +36,12 @@
             }
             if (flag == true){
                 document.write(n + " là số nguyên tố <br/>");
-                dem=dem+1;
             }
-       
-            
-            if (nii==dem){
-                break;
+            else{
+                document.write(n + " không phải là số nguyên tố <br/>");
             }
         }}
+        }
     </script>
 </body>
 </html>

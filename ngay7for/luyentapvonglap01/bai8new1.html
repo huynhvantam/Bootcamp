@@ -24,55 +24,39 @@
         <!-- Nhập B <input id="idA" type="number"> -->
         <input value="bắt đầu" type="button" onclick="clickOK()">
 
-        <input value="chơi lại" type="button" onclick="clickOK()">
+       
     </h2>
-    <p id="output2"></p>
-    <p id="output1"></p>
-    <p id="output"></p>
 
     <script>
         function clickOK() {
-
+            
             var choii = prompt('nhập khoảng số tự chọn');
-
-            //
-            // var choii = document.getElementById('idA').value;
             var x = Math.round(Math.random() * choii);
-            var choi = prompt('nhập số tự chọn từ 0 cho đến ' + choii);
-            document.getElementById('output1').innerHTML = "số máy chọn là :" + x;
-            document.getElementById('output2').innerHTML = "bạn chọn là :" + choi;
+           
+            for (var a=3; a>0;){
+                var choi = prompt('nhập số tự chọn từ 0 cho đến ' + choii);
+             alert( "số máy chọn là :" + x);
+             alert( "bạn chọn là :" + choi);
             if (choi == x) {
 
-                document.getElementById('output').innerHTML = "chúc mừng";
-
-            } else if (choi > x) {
-                document.getElementById('output').innerHTML = "Số bạn chọn lớn hơn máy chọn";
-            } else if (choi < x) {
-                document.getElementById('output').innerHTML = "Số bạn chọn nhỏ hơn máy chọn";
-            } else {
-                document.getElementById('output').innerHTML = "nhập sai";
-            }
-
-
-
-
-
-
-
-
-
-
-            // var y = Math.round(Math.random() * 10);
-            // document.getElementById('output').innerHTML = x;
-
-            // var num = +document.getElementById('idA').value;
-            // for (var i = 0; i <= num; i++) {
-            //     document.write('số ' + i + '<br>');
-            //     if (i == 99) {
-            //         alert('đã hoàn thành');
-            //     }
-            // }
-        }
+                 alert( "chúc mừng");
+                break;
+             } else if (choi > x) {
+                a--;
+                         alert( "Số bạn chọn lớn hơn máy chọn");
+                        a--;
+                    } else if (choi < x) {
+                        a--;
+                         alert( "Số bạn chọn nhỏ hơn máy chọn");
+                        
+                    } 
+                        
+                      if(a==0) {
+                         alert( "Gameover");
+                        break;
+                      }
+                      
+            }}
     </script>
 </body>
 
