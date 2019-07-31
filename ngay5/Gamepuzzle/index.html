@@ -15,6 +15,7 @@
         <img id="img3" src="khi1.jpg" value="3" width="400px" height="100px" onclick="changeImg3()"/>
         <!-- <img id="img4" src="" value="" width="400px" height="100px" onclick="changeImg4()"/>
         <img id="img5" src="" value="" width="400px" height="100px" onclick="changeImg5()"/> -->
+            <input type="button" value="OK" onclick="clickOK()">
     </div>
 
 <script>
@@ -43,12 +44,10 @@
                 break;
             case 3:
                 img1.src = 'panda1.jpg';
-                 img3.value = 3;
+                 img1.value = 3;
                 break;
         }
-        if (img1.value == img2.value && img1.value == img3.value) {
-      document('dung roi');
-    }
+       
     }
     function changeImg2() {
         var rand = Math.floor((Math.random() * 3) + 1);
@@ -67,9 +66,7 @@
                 img2.value = 3;
                 break;
         }
-        if (img1.value == img2.value && img1.value == img3.value) {
-      alert('dung roi');
-    }
+        
     }
     function changeImg3() {
         var rand = Math.floor((Math.random() * 3) + 1);
@@ -88,10 +85,14 @@
                  img3.value = 3;
                 break;
         }
-        if (img1.value == img2.value && img1.value == img3.value)  {
+       
+    }
+function clickOK(){
+
+    if (img1.value == img2.value && img1.value == img3.value)  {
       alert('dung roi');
     }
-    }
+}
     
    
 </script>

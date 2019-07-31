@@ -17,16 +17,28 @@
     <script>
         function clickOK() {
             var dem =0;
+            var count=0;
+            var b=0; a=1; 
             var number = +document.getElementById('idA').value;
-            for (var i=1;;i++) {
-                if (i%5==0) {
-                    dem=dem+1;
-                    document.write(i+' chia hết cho 5 <br>'); 
-                    break;
-                     
-                }
+                
+                for (var countt =0; countt<number;countt++) {
+                    document.write(dem=a);
+                    document.write('<br>');
+                    a=a+b;
+                    b=dem;
+                    count++;
+                    if (dem%5==0) {
+                        document.write('-----------------<br>'); 
+                    document.write(dem+' chia hết cho 5 <br>'); 
+                    
                  
-            }   
+                }
+                }
+            
+           
+                
+                 
+           
       
         }
        

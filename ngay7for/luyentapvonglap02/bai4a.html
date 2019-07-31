@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật rỗng</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let m = +prompt("Nhập chiều dài:");
+        let n = +prompt("Nhập chiều rộng:");
+        for (let i = 0; i < m ;i++){
+            for (let j = 0; j < n ;j++){
+                if(i==0 || i==m-1 || j==0 || j==n-1) 
+                document.write("*");
+                else document.write("&ensp; ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

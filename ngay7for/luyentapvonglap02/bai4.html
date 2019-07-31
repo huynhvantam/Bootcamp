@@ -8,27 +8,24 @@
 </head>
 <body>
     <script>
-        var doc = +prompt('nhap chieu doc');         
-            for (;doc<=0;) {
-                doc = +prompt('nhap lai chieu doc');
-            }
+       
         var ngang = +prompt('nhap chieu ngang');
             for (;ngang<=0;) {
                 ngang = +prompt('nhap lai chieu ngang');
             }
-            var sum ='';
-            var sao ='*';
-            var sumdoc ='';
-        for (var i=1;i<=doc;i++) {
-            for (var y=1; y<=ngang; y++) {
-                
-
-                 
-                sum=sum+sao;
-                document.write(sum +'<br>');
+            var doc = +prompt('nhap chieu doc');         
+            for (;doc<=0;) {
+                doc = +prompt('nhap lai chieu doc');
             }
-            sumdoc=sumdoc+sao;
-            document.write(sumdoc);
+           
+        for (var i=0;i<=ngang;i++) {
+            for (var j=0; j<doc; j++) {
+                if(i==0 || i==ngang || j==0 || j==doc-1) 
+                document.write(" * ");
+                else document.write("&ensp; ");
+            }
+            
+            document.write('<br>');
         }
 
 
