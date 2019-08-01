@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = [-3, 5, 1, 3, 2, 10];
+        // x.sort(function(a, b) {
+        //     return b - a;
+        // })
+        // document.write(x);
+        let first = 0;
+        let last = x.length - 1;
+        while (first < last) {
+            let b = x[first];
+            x[first] = x[last];
+            x[last] = b;
+            document.write('_');
+            document.write(x[first]);
+            document.write(x[last]);
+            document.write('_');
+            first++;
+            last--;
+            
+        }
+        //thứ tự thực thiện nó sẽ làm như sau . cho biến firt bằng index 0 và last là lenth -1 là index cuối
+        //sau đó tạo 1 biến mới b để lưu giá trị của first
+        // nếu index 0< index cuoi đúng
+        // thì gán b bằng index 0 lưu giá trị của index 0 sau đó biến index 0 bằng index cuối
+        // và index cuối bằng b 
+        // tức 1 lần đảo 2 phần tử đầu và cuối , thực hiện 3 cặp.
+        document.write(x);
+    </script>
+</body>
+</html>

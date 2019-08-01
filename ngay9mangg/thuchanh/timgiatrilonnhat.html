@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let x = [-3, 5, 6, 8, 2, 10];
+            let max = x[0];
+            let index = 0;
+            for (let i = 1; i < x.length; i++) {
+                if (x[i] > max) {
+                    max = x[i];
+                    index = i;
+                    document.write(max+'<br>');
+                }
+            }
+            alert("max: " + max + " at position " + index);
+
+//tạo 1 biến max bằng index 0 để lưu và so sánh
+// tạo index = 0; để xuất vị trí của index ở đâu
+// chạy vòng lặp cho x[i] chạy từ 1 vì biến max là x[0] 
+// nếu x[i] lớn hơn thì gán lại cho max và lưu giá trị index bằng i
+    </script>
+</body>
+</html>
