@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Death love</title>
+</head>
+<body>
+	<script type="text/javascript">
+	for (var i = 0; i < 10;i++) {
+		if( i < 2 || i > 8 || i === 5 ) {
+			document.write('&ensp;');
+		} else {
+			document.write('* ');
+		}
+	}
+		
+	document.write('<br>');
+	for (i = 0; i < 2; i++){
+		for (var j = 0; j < 10; j++){
+			document.write('* ');
+		}
+		document.write('<br>');
+	}
+	var x = 1, y=9;
+	for (i = 0; i < 6 ;i++) {
+		for (j = 0 ; j <= 10; j++) {
+			if (j < x || j > y ) {
+				document.write('&ensp;');
+			} else {
+				document.write('* ');
+			}	
+		}
+		x++;
+		y--;
+		document.write('<br>');
+	}
+	</script>
+</body>
+</html>
