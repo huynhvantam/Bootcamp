@@ -7,10 +7,14 @@
 <body>
         <script>
         
-        const num=window.prompt();
+        const num=+prompt();
         const str = num.toString();
+            document.write(str+'<br>');
         const result = [str[0]];
-        
+         document.write(result+'<br>');
+
+//tạo hằng num lấy giá trị nhập vào. xong sử dụng toString trả về một chuỗi đại diện cho mảng
+// sau đó tạo hằng result bằng số đầu tiên của mảng nhập vào
         for(let x=1; x<str.length; x++)
         {
             if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
@@ -23,6 +27,10 @@
             }
         }
         document.write(result.join(''));
+// tạo x để lọc phần tử index.
+// nếu vị trí index str[x-1] và [x] chia hết cho 2 thì
+// push vào hằng result dấu - ở vị trị giữa str[x-1] và str[x]
+// cuối cùng dùng hàm join để xóa dấu , của mảng 
         </script>
 </body>
 </html>

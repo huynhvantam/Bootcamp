@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Swap the case of each character of a string</title>
+</head>
+<body>
+    <script>
+            var str = 'ƯEFWE';
+            var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            var result = [];
+//tạo biến str đầu vào
+// tạo 2 mảng chuyển đổi ký tự
+// tạo mảng result để xuất mảng đã đổi
+            for(var x=0; x<str.length; x++)
+            {
+                if(UPPER.indexOf( str[x]) !== -1)
+                {
+                result.push(str[x].toLowerCase());
+                }
+                else if(LOWER.indexOf(str[x]) !== -1)
+                {
+                result.push(str[x].toUpperCase());
+                }
+                else 
+                {
+                result.push(str[x]);
+                }
+            }
+            document.write(result.join(''));
+// cho lặp qua các phần tử của mảng từ index=0
+// sử dụng hàm indexof() trả về giá trị index đầu tiên của mảng. Nếu không tìm thấy thì trả về giá trị -1
+// Nếu ở biến in hoa UPPER có indexOf khác -1. Tức là có tồn tại nên mới khác -1
+// thì sẽ sử dụng push vào result. với hàm toLowerCase biến tất cả chữ hoa thành Thường
+// nếu lần 2  từ chữ thường sang Hoa
+// Hoặc trả về giá trị đúng của nó
+// sau đó xuất chuổi result với hàm join('') loại bỏ các dấu ,
+</script>
+</body>
+</html>

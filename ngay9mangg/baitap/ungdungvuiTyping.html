@@ -1,0 +1,52 @@
+
+<html>
+        <head>
+            <title>Faking Textarea on Typing</title>
+            <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+            
+        </head>
+        <body>
+                <h2>Type anthing slowly</h2>
+                <form name="f">
+                    <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+<!-- thuốc tính onkeydown = ""kích hoạt khi người dùng nhấn một phím trên bàn phím -->
+                </form>
+            <script>
+                    var a=[],n="";
+                    a[1]='T';a[2]='Ô';a[3]='I';a[4]=' ';a[5]='L';a[6]='À';a[7]=' ';a[8]='M';a[9]='Ộ';a[10]='T';a[11]=' ';a[12]='Đ';a[13]='Ứ';a[14]='A';a[15]=' ';a[16]='N';a[17]='G';a[18]='Ố';a[19]='C';a[20]='!';a[21]='!';a[22]='!';
+// tạo mảng a rỗng. Sau đó gán các ở thành phần vào cho mảng
+// gán 22 ký tự cho 22 thành phần trong mảng
+                    function typeTextarea(){
+                       var t = document.f.txt.value;
+// tạo biến t lấy value của sự kiện khi gõ vào (từ form f > textarea txt)
+                       var  j = t.length;
+// tạo biến j bằng độ dài của mảng t
+                        if(j > 0)
+                        {
+                            for(var i=1; i<=j; i++)
+                            {
+                                n = n + a[i];
+                                if(i == 22)
+                                {
+                                    document.f.txt.value = "";
+                                    n = "";
+                                }
+                            }
+                        }
+                        document.f.txt.value = n;
+                        n="";
+                        // nếu j>0 tức có nhập vào 
+// vòng lặp qua các phần tử của mảng 
+// tạo chuỗi n rỗng. và gán n bằng n+ vị trí index có sẵn tức bằng i
+// nếu index[22] thì làm rỗng nó
+// sau đó gán biến n bằng giá trị nhập vào. Ko hiểu . 
+// sau đó cho n rỗng
+                        setTimeout("typeTextarea()", 1);
+// cuối cùng sử dụng hàm setTimeout(function, time)
+// function: là nội dung cần thực hiện, đây là một hàm
+// time: là khoảng thời gian bao nhiêu (tính bằng mili giây) thì function đó sẽ thực hiện
+                        //return false;
+                    }
+                </script>
+        </body>
+    </html>

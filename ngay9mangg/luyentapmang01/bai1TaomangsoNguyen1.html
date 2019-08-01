@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtValue" value="">
+    <input type="button" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" value="Display" onclick="display_array();"></input>
+    <div id="result"></div>
+    <script>
+      let a=0;// tinh ra index
+      let mang=[];
+      function add_element_to_array() {
+          mang[a] = document.getElementById('txtValue').value;
+          a++; // tang vi tri index
+         
+      }
+      function display_array(){
+          let e=''; // xuat ra output
+          for (let i =0; i<mang.length;i++) {
+              e+= mang[i]+ "<br/>";
+              document.getElementById("result").innerHTML = e;
+          }
+      }
+       
+
+    </script>
+</body>
+</html>
