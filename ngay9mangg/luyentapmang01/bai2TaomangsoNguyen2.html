@@ -7,13 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="output"></p>
     <script>
         var int = [1,2,3,4,5,66,77,18,33,8];
-        for (var indexx in int) {
-            if (int[indexx] >=10) {
-                document.write(int[indexx]+'<br>');
+        var gan;
+        var max = int [0];
+        
+        for ( var i=1; i<int.length; i++) {
+            if(max < int[i]) {
+                max = int[i];
+                gan = i;
+      
+               document.getElementById('output').innerHTML = max;
             }
+          
         }
+      
     </script>
 </body>
 </html>

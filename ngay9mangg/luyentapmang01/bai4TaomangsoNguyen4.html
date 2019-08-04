@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+     </style>
+</head>
+
+<body>
+    <input type="text" id="txtValue" value=""></input>
+    <input type="button" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" value="Revese" onclick="display_array();"></input>
+    <div id="result"></div>
+    <script>
+        let x = 0;
+        let array =[];
+
+
+        function add_element_to_array() {
+            array[x] = document.getElementById("txtValue").value;
+            // alert("Element: " + array[x] + " Added at index " + x);
+            x++;
+            document.getElementById("txtValue").value = "";
+        }
+
+//button add 
+// đầu tiên tạo biến x=0 và tạo 1 mảng tên là array
+// khi click vào button
+// array ở vị trí thứ x=0 là array[0] = value được truyền vào từ input
+// sau đó tăng x++ mục đích để click lần 2 sẽ tính array[1]
+// sau đó cho cái input về rỗng value = '';
+        function display_array() {
+            let e = "<hr/>";
+            var  gan ;
+            var first = 0;
+            var last = array.length-1;
+           
+            while (first<last) {
+              gan= array[first];
+                
+                array[first] = array[last];
+                array[last] = gan;
+                first++;
+                last--;
+
+
+
+
+                // e += "Element " + i + " = " + array[i] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = array;
+        }
+//button display tạo biến e là đường chân trời xuống hàng
+//tạo biến i=0 i nhỏ hơn độ dài của mảng 
+// biến e sẽ hiển thị trên div 
+//trong vòng lặp e sẽ bằng e hiện thị các giá trị index 0>n   
+    </script>
+</body>
+ 
+</html>
