@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function processConfirm(answer) {
+    let result = "";
+    if (answer) {
+        result = "Excellent. We'll play a nice game of chess.";
+    } else {
+        result = "Maybe later then.";
+    }
+    return result;
+// tạo hàm processConfirm 
+// với biến truyền vào là tham số answer
+// tạo biến result để trả về kết quả
+// nếu answer đúng or sai
+}
+let confirmAnswer = confirm("Shall we play a game?");
+// let theAnswer = ;
+alert(processConfirm(confirmAnswer));
+// đặt biến confirmAnswer hiện thông báo confirm hiện cửa số chọn đúng sai
+// sau đó alert kết quả ra 
+    </script>
+</body>
+</html>

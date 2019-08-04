@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="txtValue" value="" type="text">
+    <input type="button" value="OK" onclick="clickOK()"><br>
+    
+    <input id="txtV" value="" type="text">
+    <input type="button" value="V" onclick="clickV()">
+
+    <input type="button" value="Display" onclick="clickDisplay()">  <p id="result"></p>
+
+     <script>
+         let x=0; // so index
+         let array = [];
+         function clickOK() {
+            array[x]=document.getElementById('txtValue').value;
+            x++;
+            document.getElementById('txtValue').value = '';
+         }
+         function clickV() {
+             var v = document.getElementById('txtV').value;
+             for ( var i =0; i<array.length; i++) {
+                 if (array[i] == v ) {
+                     alert('V is in the array');
+                  
+                 }
+                 else {
+                    alert('V is NOT in the array');
+                  
+                 }
+
+                  
+             }
+         }
+         function clickDisplay(){
+            let e = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = e;
+         }
+     </script>
+</body>
+</html>

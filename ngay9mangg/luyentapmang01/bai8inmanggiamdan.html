@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,3,4,5,66,-77,18,-33,8];
+        let min = arr[0];
+        var arrr = [];
+        var gan =0;
+        // arrr.push(7);
+        for(var i = 1; i < arr.length; i++){
+                for(var i = 1; i < arr.length; i++){
+                    if(arr[i] < min){
+                        min = arr[i];
+                        gan = arr[i];
+                       
+                    }
+                    arr.splice(i,1);
+                        arrr.push(gan);
+                        
+                        break;
+                    
+                    // var gan =i;
+                    
+                }
+                document.write(arr+'<br>');
+        }
+
+            
+
+       
+        
+   
+    </script>
+</body>
+</html>
