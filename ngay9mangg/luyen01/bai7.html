@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let array1 = [];
+        
+        for (let i=0;i<10;i++) {
+           array[i] = +prompt("Nhap phan tu cua mang"); 
+           array1[i] = array[i];
+        }
+        let b = +prompt("Nhap so muon kiem tra co trong mang khong");
+        
+        for (let i=0;i<10;i++) {
+            if (b === array[i]) {
+                array.splice(i,1)    // xóa đi một phần tử từ vị trí i ,nếu array.splice(i,2) : là xóa đi 2 phần tử từ vị trí i 
+            document.write("Mang so nguyen da cho la: " + "["+array1+"]" + "<br>");
+            document.write("Mang so nguyen da xoa so nhap vao co trong mang la:" + "["+array+"]")
+            }
+        }
+                
+        
+        
+    </script>
+</body>
+</html>

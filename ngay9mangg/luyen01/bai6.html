@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        for (let i=0;i<10;i++) {
+            array[i] = +prompt("Nhap phan tu trong mang");
+        }
+        let b = +prompt("Nhap so muon kiem tra co trong mang khong");
+        let tontai = false;
+        for (let i=0;i<10;i++) {
+            if (b === array[i]) {
+                tontai = true;
+            }  
+        }
+        if (tontai) {
+            alert(b + " is in the array");
+        } else
+        alert (b + " is not in the array");
+    
+            
+            
+           
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let array1 = [];
+        for (let i=0;i<10;i++) {
+            array [i] = +prompt("Nhap cac phan tu trong mang");
+            array1[i] = array[i];
+        } 
+        let A = array.sort(function(a,b) {
+            return b-a;
+        } )
+        document.write("Mang da cho la: " + array1 + "<br>");
+        document.write("Mang da cho theo thu tu giam dan la: " + A);
+    </script>
+</body>
+</html>

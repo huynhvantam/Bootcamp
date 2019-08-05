@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [];
+        for (let i=0;i<5;i++) {
+            a[i] = +prompt("Nhap cac phan tu trong mang a");
+        }
+        let b = [];
+        for (let i=0;i<5;i++) {
+            b[i] = +prompt("Nhap cac phan tu trong mang b");
+        }
+        let c = [a.concat(b)];
+        document.write("Mang a la: " + "["+a+"]" + "<br>");
+        document.write("Mang b la: " + "["+b+"]" + "<br>");
+        document.write("Mang c la: " + "["+c+"]");
+        
+    </script>
+</body>
+</html>

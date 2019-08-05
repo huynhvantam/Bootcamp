@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhap mang ky tu");
+        let kytu = "-";
+        let array = [];
+        for (let i=0;i<str.length;i++) {
+            if (kytu.indexOf(str[i] !== -1))  // indexOf tìm kiếm 1 p/tử trong mảng dựa vào gtri of p/tử, hàm sẽ trả về vị trí of p/tử nếu tìm thầy và trả về -1 nếu ko tìm thấy. 
+            {                 
+                array.push(str[i].replace(kytu,"_"))  // replace có chức năng tìm kiếm 1 chuỗi con or 1 biểu thức nào đó trong chuỗi sau đó thay thế nó = 1 gtri đc cung cấp bởi người dùng.
+            }
+        }
+        alert(array.join(""));
+    </script>
+</body>
+</html>
