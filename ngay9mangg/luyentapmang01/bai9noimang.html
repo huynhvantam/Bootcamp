@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input id="txtValue" value="" type="text">
+        <input type="button" value="OK" onclick="clickOK()">
+        <input type="button" value="Display" onclick="clickDisplay()">  <p id="result"></p>
+        <input type="button" value="OKK" onclick="clickOKK()">
+    <script>
+          let x=0; // so index
+         let array = [];
+         let array1= [11,12,13];
+         let array2 = [];
+         function clickOK() {
+            array[x]=document.getElementById('txtValue').value;
+            x++;
+            document.getElementById('txtValue').value = '';
+         }
+         
+         function clickDisplay(){
+            let e = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = e;
+         }
+
+        
+         
+        function clickOKK() {
+            array2 = array2.concat(array, array1);
+           alert(array2);
+         }
+    </script>
+</body>
+</html>

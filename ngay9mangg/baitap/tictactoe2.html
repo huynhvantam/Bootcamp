@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+    let result = document.getElementById("carogame");
+let board = [];
+for (let i = 0; i < 3; i++) {
+   board[i] = new Array("-", "-", "-");
+}
+display();
+let player = true;
+function changeCaro(row, col) {
+   board[row][col] = player ? 'O' : 'X';
+   player = !player;
+   display();
+}
+function display() {
+   let data = "";
+   for (let i = 0; i < 3; i++) {
+       data += "<br/>";
+       for (let j = 0; j < 3; j++) {
+           data += "<button onclick='changeCaro("
+           + i + "," + j
+           + ")'>" +
+           board[i][j]
+           + "</button>" + "&nbsp;&nbsp;";
+       }
+   }
+   result.innerHTML = data;
+}
+    </script>
+</body>
+</html>

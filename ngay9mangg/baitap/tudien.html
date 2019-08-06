@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-        Nhập Từ tiếng Anh:<input id="idString" type="text">
-    <input id="idButton" type="button" value="OK" onclick="clickOK()">
+  </head>
+  <body>
+    Nhập Từ tiếng Anh:<input id="idString" type="text" />
+    <input id="idButton" type="button" value="OK" onclick="clickOK()" />
     <p id="output"></p>
-    <script> 
-        var tiengViet = ['xin chao', 'tam biet', 'dichuyen'];
-        var tiengAnh = ['hello', 'bye', 'move'];
-        // var result = [];
-        // for ( var x=0 ; y < tiengAnh.length ; x++) {
-        //     if ()
+    <script>
+      var tiengViet = ["xin chao", "tam biet", "dichuyen"];
+      var tiengAnh = ["hello", "bye", "move"];
+      // var result = [];
+      // for ( var x=0 ; y < tiengAnh.length ; x++) {
+      //     if ()
       function clickOK() {
-          var input = document.getElementById('idString');
-          for (var indexx in tiengAnh) {
-              if (tiengAnh[indexx] == input.value) {
-                  document.getElementById('output').innerHTML = tiengViet[indexx];
-                  break;
-              }
-              else document.getElementById('output').innerHTML = 'khong co';
-          }
-
+        var input = document.getElementById("idString");
+        for (var indexx in tiengAnh) {
+          if (tiengAnh[indexx] == input.value) {
+            document.getElementById("output").innerHTML = tiengViet[indexx];
+            break;
+          } else document.getElementById("output").innerHTML = "khong co";
+        }
       }
-       
     </script>
-</body>
+  </body>
 </html>

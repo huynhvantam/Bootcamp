@@ -1,0 +1,26 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body onload="myFunction()">
+    <script>
+        
+      function myFunction() {
+          var arrayA = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' , 'Regulus'];
+          var arrayB = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+          
+          var input = prompt('nhap ten ngoi sao: ');
+          for (var index in arrayA) {
+            if (arrayA[index] == input) {
+              alert('ngoi sao tuong ung la: '+ arrayB[index]);
+            }
+            
+          }
+      }
+    </script>
+  </body>
+</html>

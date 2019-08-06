@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function nguyento(x){
+            if(x==1 || x==2) return true;
+            if(x>2) {
+                for(i=2;i<=Math.sqrt(x);i++){
+                    
+                if(x%i==0){
+                    nt=0; break;
+                }
+                }
+            }
+            return true;
+                }
+        
+        for (var i=-10; i<100; i++){
+            document.write('so '+ i + ' ' + nguyento(i)+'<br>');
+        }
+    </script>
+</body>
+</html>
