@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputtxt">
+    <button onclick="functionadd()">add</button>
+    <p id="list"></p>
+    <script>
+        var b = document.getElementById('list');
+        var list = [];
+        var data = "";
+        var numb = 0;
+
+        function draw(arr) {
+            data = ""
+            for (i = 0; i < list.length; i++) {
+                data += list[i] + '<button onclick="deletefunction(' + i + ')">delete</button>' +
+                    '<button onclick="changefunction(' + i + ')">change</button>' + '<br>';
+            }
+            b.innerHTML = data;
+
+        }
+
+        function functionadd() {
+            list[numb] = document.getElementById('inputtxt').value;
+            numb++;
+            document.getElementById('inputtxt').value = "";
+            draw(list)
+        }
+
+        function deletefunction(index) {
+            list.splice(index, 1);
+            draw(list);
+
+        }
+
+        function changefunction(index) {
+            list[index] = prompt('change to ?: ')
+            draw(list);
+
+        }
+    </script>
+
+
+</body>
+
+</html>

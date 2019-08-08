@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="inputtxt" type="text">
+    <button onclick="functionadd()">add</button>
+    <p id="lish"></p>
+
+    <script>
+        // var b = document.getElementById('list');
+        // var data = '';
+        var list = [];
+        var numb = 0;
+
+        function functionadd() {
+            list[numb] = document.getElementById('inputtxt').value;
+            numb++;
+            document.getElementById('inputtxt').value = '';
+        }
+    </script>
+</body>
+
+</html>

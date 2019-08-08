@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- onload="check(name)" -->
-    <script>
-      var arrayA = [
-        "Polaris",
-        "Aldebaran",
-        "Deneb",
-        "Vega",
-        "Altair",
-        "Dubhe",
-        "Regulus"
-      ];
-      var arrayB = [
-        "Ursa Minor",
-        "Tarurus",
-        "Cygnus",
-        "Lyra",
-        "Aquila",
-        "Ursa Major",
-        "Leo"
-      ];
-      var input = prompt("nhap ten ngoi sao: ");
 
-      function check(name) {
-        for (var i in arrayA) {
-          if (arrayA[i] == input) {
-            return i;
-          }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- onload="check(name)" -->
+  <script>
+    var arrayA = [
+      "Polaris",
+      "Aldebaran",
+      "Deneb",
+      "Vega",
+      "Altair",
+      "Dubhe",
+      "Regulus"
+    ];
+    var arrayB = [
+      "Ursa Minor",
+      "Tarurus",
+      "Cygnus",
+      "Lyra",
+      "Aquila",
+      "Ursa Major",
+      "Leo"
+    ];
+    var input = prompt("nhap ten ngoi sao: ");
+
+    function check(name) {
+      for (var i in arrayA) {
+        if (arrayA[i] == input) {
+          return i;
         }
-        return -1;
       }
+      return -1;
+    }
 
-      var gan = check(input);
+    var gan = check(input);
 
-      if (gan != -1) {
-        alert("ngoi sao tuong ung la: " + arrayB[gan]);
-      } else alert("khong co trong mang");
-    </script>
-  </body>
+    if (gan != -1) {
+      alert("ngoi sao tuong ung la: " + arrayB[gan]);
+    } else alert("khong co trong mang");
+  </script>
+</body>
+
 </html>
