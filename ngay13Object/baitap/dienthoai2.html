@@ -10,8 +10,11 @@
 
 <body>
     <h3>Điện thoại Nokia</h3>
+    Gửi tin nhắn <input id="inputMess" type="text" value="">
+    <button onclick="clickSend()"> gửi</button><br>
     <button onclick="clickBattery()"> sạc điện thoại</button>
     <button onclick="clickSeenMess()"> Xem tin nhắn</button>
+    <p id="seenMess"></p>
     <p id="seenBattery"></p>
     <hr>
     <h3>Điện thoại Iphone</h3>
@@ -21,12 +24,22 @@
     <script>
         class Mobile {
             constructor(name) {
-                this.battery = 50;
+                this.battery = 10;
                 this.name = name;
                 this.draftMess = [];
                 this.seenMess = [];
                 this.status = true;
                 this.inbox = [];
+
+            }
+
+            turnoff() {
+                this.status = false
+                if (this.battery < 1) {
+
+                    alert(false);
+                    this.battery = 1;
+                }
 
             }
             change() {
@@ -48,17 +61,23 @@
 
         nokia = new Mobile('nokia');
         iphone = new Mobile('iphone');
+
+
+
         nokia.display();
         iphone.display2();
 
         function clickBattery() {
             nokia.change();
             nokia.display();
+
         }
 
         function clickSeenMess() {
             nokia.lossBattery();
             nokia.display();
+            nokia.turnoff();
+
         }
 
         function clickBattery2() {

@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <script> 
-        function kiemtra(A,c) {
-            for( let i=0; i< A.length;i++) {
+    <script>
+        function kiemtra(A, c) {
+            for (let i = 0; i < A.length; i++) {
                 if (A[i] === c)
-                return false;
+                    return false;
             }
             return true;
         }
 
-        let str = ["a","A","B","a","c","3","d","d"];
+        let str = ["a", "A", "B", "a", "c", "3", "d", "d"];
         let array = [str[0]];
-        for (let i=0;i <str.length;i++) {
-            if (kiemtra(array,str[i])) {
+        for (let i = 0; i < str.length; i++) {
+            if (kiemtra(array, str[i])) {
                 array.push(str[i])
             }
         }
-            
+
         document.write(array.join('-'));
         document.write("<br/>")
         document.write("So ky tu trong mang la: " + array.length);
         // ver2
     </script>
 </body>
+
 </html>
-    </script>
-    
+</script>
+
 </body>
+
 </html>

@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-     
         let str = prompt("Nhap vao chuoi 1");
-        let array =prompt("Nhap vao chuoi 2");
+        let array = prompt("Nhap vao chuoi 2");
         let pos = 0;
-        for (let i=0;i<str.length;i++) {
+        for (let i = 0; i < str.length; i++) {
             if (str[i] === array[i]) {
                 pos = pos + 1;
-            }  
+            }
         }
         if (pos === (str.length) && pos === (array.length)) {
             alert("Hai mang nay giong nhau");
         } else
-        alert ("Hai mang nay khac nhau");
-        
-            
-            
+            alert("Hai mang nay khac nhau");
     </script>
 </body>
+
 </html>
