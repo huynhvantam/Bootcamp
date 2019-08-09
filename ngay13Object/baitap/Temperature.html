@@ -13,16 +13,26 @@
         let Temperature = function (nhietdoC) {
 
             this.nhietdoC = function () {
-                if (nhietdoC > -273) {
-                    console.log('nhap sai');
+                if (nhietdoC < -273) {
+                    alert('nhap sai');
                 }
-
+                this.changeF = function () {
+                    var doF = 9 / 5 * nhietdoC + 32;
+                    alert(nhietdoC + ' do C = ' + doF + ' do F');
+                }
+                this.changeK = function () {
+                    var doK = nhietdoC + 273.15;
+                    alert(nhietdoC + ' do C = ' + doK + ' do K');
+                }
             }
 
 
         }
-        let temperature = new Temperature(666);
+        // let temp = +prompt('nhap nhiet do vao nao');
+        let temperature = new Temperature(25);
         temperature.nhietdoC();
+        temperature.changeF();
+        temperature.changeK();
     </script>
 </body>
 

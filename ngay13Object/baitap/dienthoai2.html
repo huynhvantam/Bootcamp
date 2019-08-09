@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Điện thoại Nokia</h3>
+    <button onclick="clickBattery()"> sạc điện thoại</button>
+    <button onclick="clickSeenMess()"> Xem tin nhắn</button>
+    <p id="seenBattery"></p>
+    <hr>
+    <h3>Điện thoại Iphone</h3>
+    <button onclick="clickBattery2()"> sạc điện thoại</button>
+    <button onclick="clickSeenMess2()"> Xem tin nhắn</button>
+    <p id="seenBattery2"></p>
+    <script>
+        class Mobile {
+            constructor(name) {
+                this.battery = 50;
+                this.name = name;
+                this.draftMess = [];
+                this.seenMess = [];
+                this.status = true;
+                this.inbox = [];
+
+            }
+            change() {
+                return this.battery = 100;
+            }
+            display() {
+                document.getElementById('seenBattery').innerHTML = 'pin dien thoai ' + this.battery + '%';
+            }
+            display2() {
+                document.getElementById('seenBattery2').innerHTML = 'pin dien thoai ' + this.battery + '%';
+            }
+            lossBattery() {
+                this.battery--;
+            }
+            setname(newname) {
+                this.name = newname;
+            }
+        }
+
+        nokia = new Mobile('nokia');
+        iphone = new Mobile('iphone');
+        nokia.display();
+        iphone.display2();
+
+        function clickBattery() {
+            nokia.change();
+            nokia.display();
+        }
+
+        function clickSeenMess() {
+            nokia.lossBattery();
+            nokia.display();
+        }
+
+        function clickBattery2() {
+            iphone.change();
+            iphone.display2();
+        }
+
+        function clickSeenMess2() {
+            iphone.lossBattery();
+            iphone.display2();
+        }
+    </script>
+</body>
+
+</html>
