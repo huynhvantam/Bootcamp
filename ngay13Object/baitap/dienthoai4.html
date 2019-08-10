@@ -14,13 +14,16 @@
     <button onclick="clickSend()"> gửi</button><br>
     <button onclick="clickBattery()"> sạc điện thoại</button>
     <button onclick="clickSeenMess()"> Xem tin nhắn</button>
-    <p id="seenMess"></p>
+    <p id="seenMess2"></p>
     <p id="seenBattery"></p>
     <hr>
     <h3>Điện thoại Iphone</h3>
+    Gửi tin nhắn <input id="inputMess2" type="text" value="">
+    <button onclick="clickSend2()"> gửi</button><br>
     <button onclick="clickBattery2()"> sạc điện thoại</button>
     <button onclick="clickSeenMess2()"> Xem tin nhắn</button>
     <p id="seenBattery2"></p>
+    <p id="seenMess"></p>
     <script>
         class Mobile {
             constructor(name) {
@@ -29,11 +32,11 @@
                 this.draftMess = [];
                 this.seenMess = [];
                 this.status = true;
-                this.inbox = ['b', 'c'];
+                this.inbox = [];
 
             }
             inboxMess(x) {
-                this.inbox.push('x');
+                this.inbox.push(x);
             }
             turnoff() {
                 this.status = false
@@ -48,10 +51,11 @@
                 this.battery = 100;
             }
             display() {
-                document.getElementById('seenMess').innerHTML = this.inbox;
+                document.getElementById('seenMess2').innerHTML = 'các tin nhắn của bạn: ' + this.inbox;
                 document.getElementById('seenBattery').innerHTML = 'pin dien thoai ' + this.battery + '%';
             }
             display2() {
+                document.getElementById('seenMess').innerHTML = 'các tin nhắn của bạn: ' + this.inbox;
                 document.getElementById('seenBattery2').innerHTML = 'pin dien thoai ' + this.battery + '%';
             }
             lossBattery() {
@@ -61,42 +65,40 @@
                 this.name = newname;
             }
         }
-
         nokia = new Mobile('nokia');
         iphone = new Mobile('iphone');
-
-
-
         nokia.display();
         iphone.display2();
-
         function clickBattery() {
             nokia.change();
             nokia.display();
-
         }
-
         function clickSeenMess() {
             nokia.lossBattery();
             nokia.display();
             nokia.turnoff();
-
         }
-
         function clickBattery2() {
             iphone.change();
             iphone.display2();
         }
-
         function clickSeenMess2() {
             iphone.lossBattery();
             iphone.display2();
         }
         function clickSend() {
             var messSend = document.getElementById('inputMess').value;
-
+            iphone.lossBattery();
             nokia.inboxMess(messSend);
-            // nokia.inboxMess();
+            document.getElementById('inputMess').value = '';
+            nokia.display2();
+
+        } function clickSend2() {
+            var messSend1 = document.getElementById('inputMess2').value;
+            nokia.lossBattery();
+            iphone.inboxMess(messSend1);
+            document.getElementById('inputMess2').value = '';
+            iphone.display();
         }
     </script>
 </body>
