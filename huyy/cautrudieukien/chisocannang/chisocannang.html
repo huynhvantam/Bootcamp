@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let width = +prompt("Nhập vào cân nặng (kg): ");
+        let height = +prompt("Nhập vào chiều cao (m): ");
+        let bmi = width / (height*height)
+        if (bmi < 18)  // ở đây có thể use toán tử 3 ngôi thay thế cho cấu trúc if chú thích ở dưới //
+        document.write("Underweight");
+        else if (bmi < 25.0)
+        document.write("Normal");
+        else if (bmi < 30.0)
+        document.write("Overweight");
+        else
+        document.write("Obese");
+        /* let chiso = (bmi < 18) ? "Underweight" : (bmi < 25.0) ? "Normal" : (bmi < 30.0) ? "Overweight" : "Obese";
+        alert(chiso) */
+    </script>
+</body>
+</html>

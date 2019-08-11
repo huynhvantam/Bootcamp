@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Chơi" onclick="Click()" />
+    <script>
+        function Click() {
+        let sodau=+prompt("Nhập vào số bạn muốn bắt đầu: ");
+        let socuoi=+prompt("Nhập vào số bạn muốn kết thúc: ");
+        let a=Math.floor(Math.random()*(socuoi-sodau))+sodau;
+        let i;
+        for (i=1;i<4;i++) {
+        let b=+prompt("Nhập số bạn đoán: ");
+            if (b>a) {
+                alert("Số bạn nhập lớn hơn xin mời nhập lại");
+            } else if (b<a) {
+                alert("Số bạn nhập nhỏ hơn xin mời nhập lại");
+            } else
+                alert("Chúc mừng bạn đã đoán đúng");
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

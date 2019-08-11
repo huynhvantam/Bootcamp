@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Thu nhập cá nhân: ");
+        if (a>0 && a<5000000) {
+            alert("Miễn thuế thu nhập cá nhân");
+        } else if (a<10000000) {
+            alert("Thuế thu nhập cá nhân là: " + ((a*5)/100));
+        } else if (a<20000000) {
+            alert("Thuế thu nhập cá nhân là: " + ((a*10)/100));
+        } else if (a<30000000)
+            alert("Thuế thu nhập cá nhân là: " + ((a*15)/100));
+
+    </script>
+</body>
+</html>

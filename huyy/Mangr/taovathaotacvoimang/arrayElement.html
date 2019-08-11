@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sample Screen</p>
+            <input type="text" id="textvalue"> 
+            <input type="button" value="Add" onclick="Ad()"> 
+            <input type="button" value="Display" onclick="Dis()"> 
+            <div id="resutl"></div>
+    <script>
+        
+        let x=0;
+        let array= Array();
+        function Ad() {
+            array[x]=document.getElementById("textvalue").value;
+            x++
+            document.getElementById("textvalue").value="";
+        }
+        function Dis() {
+            let e= "<hr/>";
+            for(let i=0;i<array.length;i++) {
+                e+="Element " + i + "=" + array[i] + "<br/>";
+            } 
+            document.getElementById("resutl").innerHTML=e;
+        }
+    </script>
+</body>
+</html>

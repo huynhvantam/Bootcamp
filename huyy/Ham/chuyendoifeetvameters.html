@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="Number"/>
+    <input type="button" value="Meters" onclick="feetToMeter()"/>
+    <input type="button" value="Feet" onclick="meterToFeet()"/>
+    <script>
+        function feetToMeter(feet) {
+            feet = document.getElementById("Number").value;
+            if (feet < 0) {             // ở đây có thể use toán tử 3 ngôi cho gọn như ở hàm dưới.
+                alert("Moi nhap lai so lon hon 0");
+            } else
+            alert(meter = 0.305 * feet);
+        }
+        function meterToFeet(meter) {
+            meter = document.getElementById("Number").value;
+            meter < 0 ? alert("Moi nhap lai so lon hon 0") : alert(feet = 3.279 * meter );
+        }
+
+    </script>
+</body>
+</html>

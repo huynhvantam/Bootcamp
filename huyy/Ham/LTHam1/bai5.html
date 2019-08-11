@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let star=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let constellation=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let str = prompt("Nhap vao chuoi muon xac nhan");
+        function dich(str) {
+            for (let i=0;i<star.length;i++) {
+                    if (str.toLowerCase()===star[i].toLowerCase()) {
+                        return constellation[i];
+                    } 
+                }
+               
+                return ("Khong tim thay ket qua");
+            }
+
+            alert(dich(str));
+        // ver2
+        
+    </script>
+</body>
+</html>

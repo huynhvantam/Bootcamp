@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+       function Mobile(batery, status) {
+           this.batery = batery;
+           this.status = status;
+           this.draft = [];
+           this.sent = [];
+           this.inbox = [];
+           this.getBatery = function(){
+               return this.batery;
+           }
+           this.getStatus = function(){
+               return this.status;
+           }
+           this.getDraft = function(){
+               return this.draft;
+           };
+           this.getInbox = function(){
+               return this.inbox;
+           };
+           this.getSent = function(){
+               return this.sent;
+           };
+           this.checkStatus = function(){
+               return status;
+           };
+           this.turnPower = function(){
+               this.status = !this.status;
+           };
+           this.charge = function(power){
+               this.batery = (this.batery + power) > 100 ? 100 : (this.batery + power);
+           };
+           this.compose = function(smg){
+               this.draft.push(smg);
+           }
+           this.send = function(smg){
+               this.draft.pop();
+               this.move(smg);
+           }
+           this.receiver = function(smg){
+               this.inbox.push(smg);
+           }
+           this.move = function(smg){
+               this.sent.push(smg);
+           }
+
+       }
+
+       let nokia = new Mobile(20, 1);
+       let iphone = new Mobile(20, 1);
+       // nokia.turnPower();
+       // nokia.charge(60);
+        let message = 'how are you doing?';
+        let message2 = 'I am fine, thanks.'
+       // nokia.compose(message);
+       // nokia.send(message);
+       // iphone.receiver(message);
+
+       function sendMessage(sender, receiver, msg){
+           if(!receiver.getStatus())
+               alert('receiver is off')
+           else
+           {
+               sender.compose(msg);
+               sender.send(msg);
+               receiver.receiver(msg);
+           }
+       }
+
+       sendMessage(nokia, iphone, message);
+       sendMessage(iphone, nokia, message2);
+       // iphone.turnPower();
+       // sendMessage(nokia, iphone, message);
+   
+    </script>
+</body>
+</html>

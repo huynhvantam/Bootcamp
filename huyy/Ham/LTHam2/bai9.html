@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = prompt("Nhap vao mang");
+        let cha = prompt("nhap vao 1 ky tu bat ky");
+        function ktra(array,char) {
+            let dem = 0;
+            for (let i=0;i<array.length;i++) {
+                if (char === array[i]) {
+                    dem = dem +1;
+                }
+            }
+            if (dem > 0) {
+                return dem;
+            }
+            else {
+                return -1;
+            }   
+        }
+        document.write("So lan xuat hien ky tu trong mang : " + ktra(arr,cha));
+    </script>
+</body>
+</html>

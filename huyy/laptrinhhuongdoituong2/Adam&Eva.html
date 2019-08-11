@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        } 
+        table, tr, td {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Adam(<span id="adamWeight">70</span>kg)</td>
+                <td>Eva(<span id="evaWeight">60</span>kg)</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="adamEat" value="Eat" onclick="Eat(1)">
+                   
+                </td>
+                <td>
+                    <input type="button" id="evaEat" value="Eat" onclick="Eat(2)">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="demo"></div>
+    <script>
+        class Person {
+            constructor (name,gender,weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            eat(apple) {  
+                apple.descricse();
+                this.weight = this.weight + 1;
+                console.log(this.name + " an xong roi");
+            }
+            
+            
+        }
+
+        class Apple {
+            constructor(weight) {
+                
+                this.weight = weight;
+            }
+            descricse() {
+                this.weight = this.weight - 1;
+                console.log("weight", this.weight);
+                if (this.weight==0) {
+                    document.getElementById("adamEat").disabled = true;
+                    document.getElementById("evaEat").disabled = true;
+                    alert("Tao het roi")
+                }
+                
+            }
+        }
+
+        let adam = new Person ("Adam","Male",70);
+        let eva = new Person ("Eva","Female",60);
+        let apple = new Apple (10);
+        let adamWeight = document.getElementById("adamWeight");
+        let evaWeight = document.getElementById("evaWeight");
+
+        function Eat(id) {
+            let obj = id === 1 ? adam : eva;
+            obj.eat(apple);
+            adamWeight.innerHTML = adam.weight;
+            evaWeight.innerHTML = eva.weight;
+        }
+        
+    </script>
+</body>
+</html>

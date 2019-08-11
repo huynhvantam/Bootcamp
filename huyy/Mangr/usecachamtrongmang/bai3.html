@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let str = prompt("");
+       let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       let LOWER = "abcdefghijklmnopqrstuvwxyz";
+       let result = [];
+       for (let i=0;i<str.length;i++) {    
+           if (UPPER.includes(str[i])) {      
+               result.push(str[i].toLowerCase());
+           } else if (LOWER.includes(str[i])) {
+               result.push(str[i].toUpperCase());
+           } else
+           result.push(str[i]);
+       } document.write(result.join(""));
+       // Phương thức include () xác định xem một chuỗi có chứa các ký tự của một chuỗi được chỉ định hay không.
+    </script>
+</body>
+</html>

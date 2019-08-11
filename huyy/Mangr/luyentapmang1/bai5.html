@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhap 1 chuoi ");
+        
+        let dem=0;
+        let nguyenam = "ueoai";
+        for (i=0;i<str.length;i++) {
+            if(nguyenam.includes(str[i])) {
+                dem ++;
+            } 
+                             
+            }      
+            
+
+        document.write("Mang so nguyen la: " + "["+str+"]" + "<br>");
+        document.write("Co " + dem + " gia tri nguyen am " + "<br>");
+     
+        
+    </script>
+</body>
+</html>

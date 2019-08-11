@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let num = +prompt("Nhap vao so thu nhat");
+        let num1 = +prompt("Nhap vao so thu hai");
+        let arrayNum = [num,num1];
+        function swap(arrayNum) {
+            let c = arrayNum[0];
+            arrayNum[0] = arrayNum[1];
+            arrayNum[1] = c;
+        } 
+        swap(arrayNum);
+        document.write(arrayNum);
+        
+        
+        
+    </script>
+</body>
+</html>

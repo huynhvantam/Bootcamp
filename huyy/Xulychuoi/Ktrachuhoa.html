@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        let string = prompt("Nhap vao chuoi")
+        
+        function isFirstLetterUpperCase(a) {
+            let array = string.split(" ");
+            console.log(array);
+            let regexp = /^[A-Z]/;
+            for(let i=0;i<array.length;i++) {
+                if (regexp.test(array[i])) {
+                    console.log("String's first character is uppercase");
+                } else {
+                   console.log("String's first character is not uppercase");
+            }
+        } 
+        }
+        
+        isFirstLetterUpperCase(string);
+    </script>
+</body>
+</html>

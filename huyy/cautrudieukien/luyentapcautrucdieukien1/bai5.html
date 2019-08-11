@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập điểm bài kiểm tra: ");
+        let b = +prompt("Nhập điểm bài giữa kỳ: ");
+        let c = +prompt("Nhập điểm bài thi học kỳ: ");
+        let d ;
+        d = (a+(b*2)+(c*3))/6;
+        if (d>7.9) {
+            alert("ket qua la gioi");
+        } else if (d>6.4) {
+            alert("ket qua la kha");
+        } else if (d>4.9) {
+            alert("ket qua la trung binh");
+        } else
+            alert("ket qua la yeu");
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <canvas id="myCanvas" width="500px" height="350px" style="border: 1px solid #d81111;" ></canvas>
+        <h3 id = "dt"></h3>
+        <h3 id = "cv"></h3>
+        <h3 id = "dt2"></h3>
+        <h3 id= "cv2"></h3>
+    <script>
+        let Rectangle = function(width,height) {
+            this.width = width;
+            this.height = height;
+
+            this.getWidth = function() {
+                return this.width;
+            }
+            this.getHeight = function() {
+                return this.height;
+            }
+
+            this.getPerimeter = function() {
+                return (this.width + this.height)*2;
+            }
+            this.getAcreage = function() {
+                return this.width*this.height;
+            }
+            this.setRectangle = function(width,height) {
+                this.width = width;
+                this.height = height;
+            }
+        }
+
+        function createRectangle(aa) 
+            {
+                let ctx = document.getElementById("myCanvas").getContext("2d");
+                let x = Math.random() * 200 ;
+                let y = Math.random() * 200;
+                ctx.fillStyle = "green";
+                ctx.fill();
+                ctx.fillRect(x,y,aa.width,aa.height);
+            }
+
+        
+        let rectangle = new Rectangle(150,100);
+        createRectangle(rectangle);
+
+        document.getElementById("dt").innerHTML="Chu vi hinh chu nhat la: " + rectangle.getPerimeter();
+        document.getElementById("cv").innerHTML="Dien tich hinh chu nhat la: " + rectangle.getAcreage();
+     
+        let aaaa = new Rectangle(40,20)
+        createRectangle(aaaa);
+
+        document.getElementById("dt2").innerHTML="Chu vi hinh chu nhat la: " + aaaa.getPerimeter();
+        document.getElementById("cv2").innerHTML="Dien tich hinh chu nhat la: " + aaaa.getAcreage();
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+        let str = "nguyen             duc            huy ";
+        let dem = 0;
+        let array = str.split(" ");
+        console.log(array);
+        let regext = /^[a-zA-Z0-9]/;
+
+        for(let i=0;i<array.length;i++) {
+            if (regext.test(array[i])) {
+                dem= dem+1;  
+                }
+            } 
+        console.log(dem);
+
+        
+    </script>
+</body>
+</html>

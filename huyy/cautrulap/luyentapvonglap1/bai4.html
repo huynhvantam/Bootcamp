@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="JS/Fibonacci.js"> </script> -->
+</head>
+
+<body> 
+    <script> 
+            let n;
+        function fibo(n)
+        {   
+            
+            if(n<0)
+            {
+                return -1;
+            }else if(n==0||n==1)
+            {
+                return n;
+            } else 
+            {
+                n=fibo(n-1) + fibo(n-2);
+                return n;
+            }
+        }
+        let i;
+        for(i=0; i<=20; i++)
+        {
+            if(fibo(i)%5==0) {
+                document.write("Số dau tien trong day fibonacci chia het cho 5 la " + fibo(i));
+                break;
+            }
+      
+            
+        }
+    </script>
+</body>
+</html>

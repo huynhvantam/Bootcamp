@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập vào a: ");
+        let b = +prompt("Nhập vào b: ");
+        let c = +prompt("Nhập vào c: ");
+        let delte,x1,x2;
+
+        delte = ((b*b) - (4*a*c));
+        x1 = (-b + Math.sqrt(delte))/(2*a);
+        x2 = (-b - Math.sqrt(delte))/(2*a);
+
+        if (delte>0) {
+            alert("Phương trình có 2 nghiệm x1,x2 là: " + "x1= " + Math.round(x1*100)/100 + "," + " x2= " + Math.round(x2*100)/100);
+        } else if (delte==0) {
+            alert("Phương trình có 1 nghiệm là: " + (-b/2*a));
+        } else 
+            alert("Phương trình vô nghiệm");
+
+
+    </script>
+</body>
+</html>

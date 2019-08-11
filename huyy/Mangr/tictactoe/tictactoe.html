@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		text-align: center;;
+	}
+	table{
+		margin: 0 auto;
+	}
+	input{
+		text-align: center;
+		width: 20px;
+		height: 20px;
+	}
+</style>
+</head>
+<body>
+	<p><button id="player"></button></p>
+	<table id="caro"></table>
+
+	<script type="text/javascript">
+		let player_btn = document.getElementById("player");
+		let count = 0;
+		let arrayValue = [];
+		let number_of_win = 5;
+		number_of_win--;
+		let row_caro = 20;
+		let col_caro = 50;
+		function create(row, col) {
+			let board = [];
+			row += number_of_win * 2;
+			col += number_of_win * 2;
+			for (let i = 0; i < row; i++) {
+				arrayValue[i] = [];
+				board[i] = [];
+				for (let k = 0; k < col; k++) {
+					arrayValue[i][k] = -1;
+					board[i][k] = '<input type="button" class="btn" row="' + i + '" col="' + k + '">';
+				}
+			}
+			return board;
+		}
+		function display() {
+			board = create(row_caro, col_caro);
+			let data = "<tr>";
+			for (let i = 0; i < row_caro; i++) {
+				for (let k = 0; k < col_caro; k++) {
+					data += "<td>" + board[i + number_of_win][k + number_of_win] + "</td>";
+				}
+				data += "</tr>";
+			}
+			let caro = document.getElementById('caro');
+			caro.innerHTML = data;
+		}
+		function checkWin(x, y, val) {
+			for (let i = 0; i < 5; i++) {
+				if (arrayValue[x][y + i - 4] == val && arrayValue[x][y + i - 3] == val && arrayValue[x][y + i - 2] == val && arrayValue[x][y + i - 1] == val && arrayValue[x][y + i] == val) {
+					return true;
+				}
+				if (arrayValue[x + i - 4][y] == val && arrayValue[x + i - 3][y] == val && arrayValue[x + i - 2][y] == val && arrayValue[x + i - 1][y] == val && arrayValue[x + i][y] == val) {
+					return true;
+				}
+				if (arrayValue[x + i - 4][y + i - 4] == val && arrayValue[x + i - 3][y + i - 3] == val && arrayValue[x + i - 2][y + i - 2] == val && arrayValue[x + i - 1][y + i - 1] == val && arrayValue[x + i][y + i] == val) {
+					return true;
+				}
+				if (arrayValue[x + i - 4][y - i + 4] == val && arrayValue[x + i - 3][y - i + 3] == val && arrayValue[x + i - 2][y - i + 2] == val && arrayValue[x + i - 1][y - i + 1] == val && arrayValue[x + i][y - i] == val) {
+					return true;
+				}
+			}
+		}
+		function statistic(row, col, player_value) {
+			count++;
+			if (checkWin(row, col, player_value)) {
+				alert("Player " + player_value + " win!");
+				docReady();
+			}
+			//do something here
+		}
+		function clickBtn() {
+			let row = parseInt(this.getAttribute("row"));
+			let col = parseInt(this.getAttribute("col"));
+			let player_value;
+			if (count % 2 == 0) {
+				player_value = 1;
+				arrayValue[row][col] = player_value;
+				this.setAttribute("value", "X");
+				player_btn.textContent = "Player 2 (O)";
+			} else {
+				player_value = 2;
+				arrayValue[row][col] = player_value;
+				this.setAttribute("value", "O");
+				player_btn.textContent = "Player 1 (X)";
+			}
+			this.setAttribute("disabled",true);
+			statistic(row, col, player_value);
+		}
+		function docReady() {
+			display();
+			let btn_objs = document.getElementsByClassName("btn");
+			for (let i = 0; i < btn_objs.length; i++) {
+				btn_objs[i].addEventListener("click", clickBtn);
+			}
+			player_btn.addEventListener("click", docReady);
+			player_btn.textContent = count % 2 == 0 ? "Player 1 (X)" : "Player 2 (O)";
+		}
+		window.onload = docReady;
+	</script>
+</body>
+</html>

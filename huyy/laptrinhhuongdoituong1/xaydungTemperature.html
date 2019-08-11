@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Temperature = function(c) {
+            this.c = c;
+            
+            this.getC = function() {
+                return this.c;
+            }
+            this.getF = function() {
+                return (this.c * 1.8) + 32;
+            }
+            this.getKenvin = function() {
+                return this.c + 273.15;
+            }
+            this.setTemperature = function(c) {
+                this.c = c;
+            }
+        }
+
+        let temperature = new Temperature(25);
+        alert("Nhiet do tu do C sang do F la: " + temperature.getF());
+        alert("Nhiet do tu do C sang do Kenvin la: " + temperature.getKenvin());
+
+        let aa = new Temperature(26);
+        alert("Nhiet do tu do C sang do F la: " + aa.getF());
+        alert("Nhiet do tu do C sang do Kenvin la: " + aa.getKenvin());
+    </script>
+</body>
+</html>

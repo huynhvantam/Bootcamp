@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="docReady()">
+    
+        <img id="xuka" src="xuka.jpg" style="position:absolute;left:0; top:0;" height="200" width="200"/>
+    <script>
+       function len() {
+           let a = document.getElementById("xuka");
+           a.style.top = parseInt(a.style.top) - 5 + 'px';
+       }
+
+       function xuong() {
+           let a = document.getElementById("xuka");
+           a.style.top = parseInt(a.style.top) + 5 + 'px';
+       }
+
+       function trai() {
+           let a = document.getElementById("xuka");
+           a.style.left = parseInt(a.style.left) - 5 + 'px';
+       }
+
+       function phai() {
+           let a = document.getElementById("xuka");
+           a.style.left = parseInt(a.style.left) + 5 + 'px';
+       }
+
+        function dichuyen (b) {
+            switch (b.keyCode) {
+                case 37 :
+                trai() ;
+                break;
+                case 39 :
+                phai();
+                break;
+                case 38 :
+                len();
+                break;
+                case 40 :
+                xuong();
+                break;
+            }
+        }
+
+        function docReady() {
+        window.addEventListener('keydown', dichuyen);
+        }
+
+
+    </script>
+</body>
+</html>
