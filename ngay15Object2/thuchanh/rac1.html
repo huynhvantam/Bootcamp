@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Điện thoại Nokia</h3>
+    Gửi tin nhắn <input id="inputMess" type="text" value="">
+    <button onclick="nokia.checkBattery()"> gửi</button><br>
+    <script>
+        class Mobile {
+            constructor(name) {
+                this.battery = 0;
+                this.name = name;
+                this.draftMess = [];
+                this.seenMess = [];
+                this.status = true;
+                this.inbox = [];
+            }
+
+            checkBattery() {
+                if (this.battery > 0) {
+                    return true;
+                }
+                alert('Đt hết pin rồi');
+                return false;
+            }
+
+            inboxMess(x) {
+                if (this.checkBattery()) {
+                    this.inbox.push(x);
+                }
+            }
+
+            onCharged() {
+                this.battery = 100;
+            }
+
+            onDisplay() {
+                document.getElementById('seenMess').innerHTML = 'tin đã gửi: ' + this.inbox;
+                document.getElementById('seenBattery').innerHTML = 'pin dien thoai ' + this.battery + '%';
+                document.getElementById('nokiaGui').innerHTML = 'Hộp thư đến:' + this.inbox;
+            }
+
+            lossBattery() {
+                this.battery--;
+            }
+        }
+
+        nokia = new Mobile('nokia');
+
+    </script>
+</body>
+
+</html>

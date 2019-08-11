@@ -38,21 +38,22 @@
 
             }
             check() {
-                if (this.status == true) {
+                if (this.status == false) {
                     alert("điện thoại đang tắt")
                 }
 
             }
-            inboxMess(x) {
-                this.inbox.push(x);
-            }
+
             turnoff(x) {
-                this.status = false
+
                 if (this.battery < 1) {
                     alert('điện thoại ' + x + ' đã hết pin');
                     this.battery = 1;
                 }
 
+            }
+            inboxMess(x) {
+                this.inbox.push(x);
             }
             change() {
                 this.battery = 100;
@@ -93,6 +94,8 @@
         //     nokia.turnoff();
         // }
         function clickBattery2() {
+            nokia.check();
+            iphone.check();
             iphone.change();
             iphone.display2();
         }
@@ -101,6 +104,8 @@
         //     iphone.display2();
         // }
         function clickSend() {
+            nokia.check();
+            iphone.check();
             var messSend = document.getElementById('inputMess').value;
             nokia.lossBattery();
             iphone.lossBattery();
@@ -110,7 +115,10 @@
             iphone.display2();
             nokia.turnoff('nokia');
 
+
         } function clickSend2() {
+            nokia.check();
+            iphone.check();
             iphone.lossBattery();
             nokia.lossBattery();
             var messSend1 = document.getElementById('inputMess2').value;
