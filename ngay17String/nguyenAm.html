@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'aeaaa     333333vvvv';
+        // var array = str.split(" ");
+        // console.log(array);
+        // console.log(array.length);
+        // let regext = /^[a-zA-Z0-9]/;
+        let dem = 0;
+        let gan = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+                dem = dem + 1;
+            } else gan++;
+        }
+        console.log(dem);
+        console.log(gan);
+    </script>
+</body>
+
+</html>
