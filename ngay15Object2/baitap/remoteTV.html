@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<h3>TIVI</h3>
+<button onclick="">Tắt</button>
+<button onclick="">Mở</button><br>
+Chuyển kênh trên TV....<input id="changeTV" type="number" onblur=""><br>
+Tăng âm lương trên TV<input id="soundTV" type="number" onblur="">
+<p id="numberTV"></p>
+<p id="sounddtv"></p>
+<h3>Remote</h3>
+
+Chuyển kênh bằng Remote...<input id="changeTV" type="number" onblur=""><br>
+Tăng âm lương bằng Remote<input id="soundTV" type="number" onblur="">
+<p id="number"></p>
+<p id="sound"></p>
+
+<body>
+    <script>
+        // function myFunction() {
+        //     var say = document.getElementById('fname').value;
+        //     document.getElementById('adamsay').innerHTML = say;
+        //     document.getElementById('fname').value = '';
+        // }
+        class Remote {
+            constructor(number, sound) {
+                this.number = number;
+                this.sound = sound;
+            }
+            setNumber(x) {
+                this.number = x;
+                this.display();
+            }
+            setSound(x) {
+                this.sound = x;
+            }
+            getNumber() {
+                return this.number;
+            }
+            getSound() {
+                return this.sound;
+            }
+            display() {
+                document.getElementById('number').innerHTML = this.number;
+                document.getElementById('sound').innerHTML = this.sound;
+            }
+        }
+        class TiVi {
+            constructor(numberTV, soundTV, status) {
+                this.numberTV = numberTV;
+                this.soundTV = soundTV;
+                this.status = status;
+            }
+            turnOn() {
+                this.status = true;
+                alert('mo tivi');
+            }
+            turnOff() {
+                this.status = false;
+                alert('tat tivi');
+            }
+            setTV(x) {
+                this.numberTV = x;
+                this.display();
+            }
+            setSoundTV(x) {
+                this.soundTV = x;
+            }
+            getNumberTV() {
+                return this.numberTV;
+            }
+            getSoundTV() {
+                return this.soundTV;
+            }
+            displayTV() {
+                document.getElementById('numberTV').innerHTML = this.numberTV;
+                document.getElementById('sounddtv').innerHTML = this.soundTV;
+            }
+        }
+        remote = new Remote(0, 1);
+        tivi = new TiVi(2, 3, true);
+        remote.display();
+        tivi.displayTV();
+    </script>
+</body>
+
+</html>

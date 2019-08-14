@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+  </head>
+  <body onload="docEvents()">
+    <div id="game"></div>
+    <script>
+      class Hero {
+        constructor(src, width, height, left, top) {
+          this.src = src;
+          this.width = width;
+          this.height = height;
+          this.top = top;
+          this.left = left;
+          this.move = 50;
+        }
+
+        createImage() {
+        return "<img src=" + this.src + " width=" + this.width 
+        + " height=" + this.height + " style='top: "
+         + this.top+"px; left:"+ this.left + "px; position:absolute' />";
+        }
+
+        moveRight() {
+        this.left += this.move;
+        this.src = "pikachuright.jpg"
+        }
+        
+        moveLeft() {
+          this.left -= this.move;
+          this.src = "pikachuleft.jpg"
+        }
+        
+        moveTop() {
+          this.top -= this.move
+          this.src = "pikachutop.jpg"
+        }
+
+        moveDown() {
+          this.top += this.move
+          this.src = "pikachudown.jpg"
+        }
+    }
+    var pikachu = new Hero('pikachu.png', 300, 300, 0, 0);
+    document.getElementById('game').innerHTML = pikachu.createImage();
+
+    function docEvents(){
+      window.addEventListener("keydown",movePikachu);
+    }
+    function movePikachu(evt) {
+      switch(evt.keyCode) {
+        case 37:
+        pikachu.moveLeft();
+        document.getElementById('game').innerHTML = pikachu.createImage();
+        break;
+        case 39:
+        pikachu.moveRight();
+        document.getElementById('game').innerHTML = pikachu.createImage();
+        break;
+        case 38:
+        pikachu.moveTop();
+        document.getElementById('game').innerHTML = pikachu.createImage();
+        break;
+        case 40:
+        pikachu.moveDown();
+        document.getElementById('game').innerHTML = pikachu.createImage();
+        break;
+      }
+    }
+
+    </script> 
+</body>
+</html>

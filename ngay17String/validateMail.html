@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var zipcode = "sdfdsfdsfdsf@gmail.con"
+        console.log(is_usZipCode(zipcode));
+        // zipcode = "7892";
+        // console.log(is_usZipCode(zipcode));
+
+        function is_usZipCode(str) {
+            // 
+            regexp = /^[a-z][a-z0-9]{5,32}@[a-z0-9]{2,10}.[a-z0-9]{2,4}$/;
+            //^ so sánh bất kỳ chuỗi nào có từ a đến z 1 ký tự thỏa
+            // {5,32} nhận chuỗi hợp lệ từ 5 đến 32 
+            if (regexp.test(str)) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

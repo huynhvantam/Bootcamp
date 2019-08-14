@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funny Circle</title>
+</head>
+
+<body>
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.Length = length;
+                this.Width = width;
+            }
+            getLength() {
+                return this.Length;
+            }
+            getWidth() {
+                return this.Width;
+            }
+            resultS() {
+                return this.Length * this.Width;
+            }
+            resultC() {
+                return (this.Length + this.Width) * 2;
+            }
+
+        }
+        rectangle = new Rectangle(10, 10);
+        alert(rectangle.resultS());
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         // isFirstLetterUpperCase('abcd');
+        // // 
+        //         function isFirstLetterUpperCase(str) {
+        //             regexp = /^[A-Z]/;
+
+        //             //^ So khớp với bất kỳ chuỗi nào bắt đầu bằng chuỗi đó
+        //             //^n bất kỳ chuỗi nào có chữ n
+        //             //^[A-Z] bất kỳ chuỗi nào có chữ in hoa từ A>Z tương tự với số 0>9
+        //             if (regexp.test(str)) {
+        //                 console.log("String's first character is uppercase");
+        //             } else {
+        //                 console.log("String's first character is not uppercase");
+        //             }
+        //         }
+        //         isFirstLetterUpperCase('nGUYEN VAN NAM');
+        //         let a = /^[0-9]/;
+
+        //         function b(string) {
+        //             if (a.test(string)) {
+        //                 console.log('co');
+        //             } else console.log('khong');
+
+        //         }
+        //         b('s1s1sfsdf');
+        function isFirstLetterUpperCase(str) {
+            regexp = /^[A-Z]/;
+            regexpp = /^[a-z]/;
+            regexppp = /^[A-Z][a-z]/;
+            regexpppp = /^[a-z][A-Z]/;
+            regexppppp = /^[A-Z][A-Z]/;
+            if (regexpppp.test(str)) {
+                console.log("truong hop aB");
+            } else if (regexppp.test(str)) {
+                console.log("truong hop Ab ");
+            } else if (regexpp.test(str)) {
+                console.log("truong hop aXX");
+            } else if (regexppppp.test(str)) {
+                console.log("truong hop AB");
+            }
+        }
+        isFirstLetterUpperCase('nguyen van Nam');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mouse {
+            constructor(name, weight, speed, isAlive, bark) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.isAlive = isAlive;
+                this.bark = bark;
+            }
+            getName() {
+                return this.name;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            getspeed() {
+                return this.speed;
+            }
+            getisAlive() {
+                return this.isAlive;
+            }
+            getbark() {
+                return this.bark;
+            }
+        }
+        class Cat {
+            constructor(name, weight, speed, isAlive, bark) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.isAlive = isAlive;
+                this.bark = bark;
+            }
+            getName() {
+                return this.name;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            getspeed() {
+                return this.speed;
+            }
+            getisAlive() {
+                return this.isAlive;
+            }
+            getbark() {
+                return this.bark;
+            }
+            eatMouse(x) {
+                if (this.speed > x.speed) {
+                    // console.log(this.speed);
+                    // console.log(x.speed);
+                    return alert(this.weight += x.weight);
+                } else alert(x.name + ' chay nhanh vai');
+            }
+        }
+        chuot = new Mouse('con chuot ', 100, 2, true, 'chitchit');
+        chuot1 = new Mouse('con chuot 1', 100, 6, true, 'chitchit');
+        meo = new Cat('conmeo', 1000, 5, true, 'meomeo');
+        // setInterval(function () {
+        //     meo.eatMouse(chuot);
+        // }, 3000);
+        // alert(meo.getWeight());
+        // alert(meo.eatMouse(chuot));
+        meo.eatMouse(chuot);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<h2>Adam</h2>
+<input type="text" id="fname" onblur="myFunction()">
+<button onclick="adam.weightUp(adam,app,'adamweight');">Ăn táo</button>
+<p id="adamweight"></p>
+<p id="adamsay"></p>
+<br>
+<h2>Eva</h2>
+<button onclick="eva.weightUp(eva,app,'evaweight')">Ăn táo</button>
+<p id="evaweight"></p>
+
+<body>
+    <script>
+        function myFunction() {
+            var say = document.getElementById('fname').value;
+            document.getElementById('adamsay').innerHTML = say;
+            document.getElementById('fname').value = '';
+        }
+        class Appplee {
+            constructor(weight) {
+                this.Weight = weight;
+            }
+            decrease() {
+                this.Weight--;
+
+            }
+            isEmpty() {
+                return this.Weight <= 0 ? false : true;
+
+
+            }
+            getWeight() {
+                return this.Weight;
+            }
+
+
+        }
+        class Human {
+            constructor(name, gender, weight) {
+                this.Name = name;
+                this.Gender = gender;
+                this.Weight = weight;
+            }
+            sayy(x) {
+                console.log(x);
+            }
+            isMale() {
+                return this.Gender;
+            }
+            setGender() {
+                this.Gender = gender;
+            }
+            checkApplee(x) {
+                return x.isEmpty();
+            }
+            eat(x) {
+                if (this.checkApplee(x)) {
+                    x.decrease();
+                    this.Weight++;
+                } else {
+                    console.log('Het');
+                }
+
+            }
+            getName() {
+                return this.Name;
+            }
+            setName(x) {
+                this.Name = x;
+            }
+            getWeight() {
+                return this.Weight;
+            }
+            setWeight(x) {
+                this.Weight = x;
+            }
+            weightUp(x, y, z) {
+                x.eat(y);
+                document.getElementById(z).innerHTML = x.Weight;
+                console.log(app.getWeight());
+            }
+        }
+        app = new Appplee(10);
+        adam = new Human('ADAM', true, 100);
+        eva = new Human('EVA', false, 80);
+        adam.sayy("aaaaaaaaaaaaa");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funny Circle</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <canvas id="myCanvas" width="800" height="500" style="border:1px solid #d3d3d3;">
+
+
+        <script>
+            class Rectangle {
+                constructor() {
+                    this.Length = Math.floor((Math.random() * 550) + 1);
+                    this.Width = Math.floor((Math.random() * 550) + 1);
+                }
+                getLength() {
+                    return this.Length;
+                }
+                getWidth() {
+                    return this.Width;
+                }
+                resultS() {
+                    return this.Length * this.Width;
+                }
+                resultC() {
+                    return (this.Length + this.Width) * 2;
+                }
+                setLW(x, y) {
+                    this.Length = x;
+                    this.Width = y;
+                }
+                canvas() {
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    ctx.rect(0, 0, this.Length, this.Width);
+                    ctx.stroke();
+                    document.getElementById('output').innerHTML = 'Dien Tich: ' + this.resultS();
+                    document.getElementById('output1').innerHTML = 'Chu Vi: ' + this.resultC();
+                }
+
+            }
+            rectangle = new Rectangle();
+            rectangle.canvas();
+        </script>
+
+</body>
+
+</html>

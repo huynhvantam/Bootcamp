@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<h2>Adam</h2>
+<button onclick="eatMain()">Ăn táo</button>
+<p id="adamweight"></p><br>
+<h2>Eva</h2>
+<button onclick="eatMainn(app)">Ăn táo</button>
+<p id="evaweight"></p>
+
+<body>
+    <script>
+        class Appplee {
+            constructor(weight) {
+                this.Weight = weight;
+            }
+            decrease() {
+                this.Weight--;
+            }
+            isEmpty() {
+                return this.Weight > 0 ? true : false;
+            }
+            getWeight() {
+                return this.Weight;
+            }
+
+
+        }
+        class Human {
+            constructor(name, gender, weight) {
+                this.Name = name;
+                this.Gender = gender;
+                this.Weight = weight;
+            }
+            isMale() {
+                return this.Gender;
+            }
+            setGender() {
+                this.Gender = gender;
+            }
+            checkApplee(x) {
+                x.isEmpty();
+            }
+            eat(x) {
+
+                x.decrease();
+                this.Weight++;
+
+            }
+            getName() {
+                return this.Name;
+            }
+            setName(x) {
+                this.Name = x;
+            }
+            getWeight() {
+                return this.Weight;
+            }
+            setWeight(x) {
+                this.Weight = x;
+            }
+
+        }
+        app = new Appplee(10);
+        adam = new Human('ADAM', true, 100);
+        eva = new Human('EVA', false, 80);
+
+        function eatMain() {
+            adam.eat(app);
+            document.getElementById('adamweight').innerHTML = adam.getWeight();
+        }
+
+        function eatMainn() {
+            eva.eat(app);
+            document.getElementById('evaweight').innerHTML = eva.getWeight();
+        }
+    </script>
+</body>
+
+</html>
