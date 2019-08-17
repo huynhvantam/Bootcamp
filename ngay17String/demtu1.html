@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'em   bi        dien dung choc       em';
+        var array = str.split(" ");
+        console.log(array);
+        console.log(array.length);
+        let regext = /^[a-zA-Z0-9]/;
+        let dem = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (regext.test(array[i])) {
+                dem = dem + 1;
+            }
+        }
+        console.log(dem);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'aeaaa   bbbbbb  333333vvvv';
+        // var array = str.split(" ");
+        // console.log(array);
+        // console.log(array.length);
+        // let regext = /^[a-zA-Z0-9]/;
+        let nguyenamm = 0;
+        let phuam = 0;
+        let kytukhac = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+                nguyenamm++;
+            } else if (str[i] == 'b' || str[i] == 'c' || str[i] == 'd' || str[i] == 'f' || str[i] == 'g') {
+                phuam++;
+            } else {
+                kytukhac++
+            }
+        }
+
+        console.log(nguyenamm);
+        console.log(phuam);
+        console.log(kytukhac);
+    </script>
+</body>
+
+</html>
