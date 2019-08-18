@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    
+
 </head>
+
 <body>
-        <table style = "width:100%">
-            <tr>
-                <th>Amount</th>
-                <th>From currency</th>
-                <th>To currency</th>
-            </tr>
-            <tr>
-                <td><input type = "number" id="money" min="0"></td> // input vào sẽ là value
-                <td>
-                    <select name = "city" id="fromMoney">
-                        <option value="VN">Viet Nam</option>
-                        <option value="USD">Tien USD</option>
-                    </select>
-                </td>
-                <td>
-                    <select name = "city" id="toMoney">
-                        <option value="USD">tien usd</option>
-                        <option value="VN">viet nam</option>
-                    </select>
-                </td>
-                
-                <td><button type= "button" id="sum" onclick="SumNumber()">Convert</button></td>
-            </tr>
-            <div id="quy"></div>
-            <sc
-        </table>
+    <table style="width:100%">
+        <tr>
+            <th>Amount</th>
+            <th>From currency</th>
+            <th>To currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="money" min="0"></td> // input vào sẽ là value
+            <td>
+                <select name="city" id="fromMoney">
+                    <option value="VN">Viet Nam</option>
+                    <option value="USD">Tien USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="city" id="toMoney">
+                    <option value="USD">tien usd</option>
+                    <option value="VN">viet nam</option>
+                </select>
+            </td>
 
-        <script>
-        function SumNumber() {
-            var number;
-            number = +document.getElementById('money').value;
-            var fromMoneyy = document.getElementById('fromMoney').value;
-            var toMoneyy = document.getElementById('toMoney').value;
-            if (fromMoneyy == "VN" && toMoneyy == "USD" ) {
-                document.getElementById('quy').innerHTML = number / 23000;
+            <td><button type="button" id="sum" onclick="SumNumber()">Convert</button></td>
+        </tr>
+        <div id="quy"></div>
+        <sc </table> <script>
+            function SumNumber() {
+                var number;
+                number = +document.getElementById('money').value;
+                var fromMoneyy = document.getElementById('fromMoney').value;
+                var toMoneyy = document.getElementById('toMoney').value;
+                if (fromMoneyy === "VN" && toMoneyy === "USD") {
+                    document.getElementById('quy').innerHTML = number / 23000;
+                }
+                if (fromMoneyy === 'USD' && toMoneyy === 'VN') {
+                    document.getElementById('quy').innerHTML = number * 23000;
+                }
+                if (fromMoneyy === 'USD' && toMoneyy === 'USD') {
+                    document.getElementById('quy').innerHTML = number * 1;
+
+                }
+                if (fromMoneyy === 'VN' && toMoneyy === 'VN') {
+                    document.getElementById('quy').innerHTML = number * 1;
+
+                }
             }
-            if (fromMoneyy == 'USD' && toMoneyy == 'VN') {
-                document.getElementById('quy').innerHTML = number * 23000;
-            }
-            if (fromMoneyy == 'USD' && toMoneyy == 'USD') {
-                document.getElementById('quy').innerHTML = number * 1;
-                
-            }
-            if (fromMoneyy == 'VN' && toMoneyy == 'VN') {
-                document.getElementById('quy').innerHTML = number * 1;
-                
-            }
-        }
         </script>
-        
 
-    
+
+
 </body>
+
 </html>

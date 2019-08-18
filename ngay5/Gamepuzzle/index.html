@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,93 +9,89 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
+
 <body>
     <div class="puzzles">
-        <img id="img1" src="cat1.jpg" value="1" width="400px" height="100px" onclick="changeImg1()"/><br>
-        <img id="img2" src="panda2.jpg" value="2" width="400px" height="100px" onclick="changeImg2()"/><br>
-        <img id="img3" src="khi1.jpg" value="3" width="400px" height="100px" onclick="changeImg3()"/>
-        <!-- <img id="img4" src="" value="" width="400px" height="100px" onclick="changeImg4()"/>
-        <img id="img5" src="" value="" width="400px" height="100px" onclick="changeImg5()"/> -->
-            <input type="button" value="OK" onclick="clickOK()">
+        <img id="img1" src="cat1.jpg" value="1" width="400px" height="100px" onclick="changeImg1()" /><br>
+        <img id="img2" src="panda2.jpg" value="2" width="400px" height="100px" onclick="changeImg2()" /><br>
+        <img id="img3" src="khi1.jpg" value="3" width="400px" height="100px" onclick="changeImg3()" />
+
+        <input type="button" value="OK" onclick="clickOK()">
     </div>
 
-<script>
-    let img1 = document.getElementById('img1');
-    let img2 = document.getElementById('img2');
-    let img3 = document.getElementById('img3');
-    
-    // let img4 = document.getElementById('img4');
-    // let img5 = document.getElementById('img5');
-   //var rand = Math.floor((Math.random() * 3) + 1);
- 
-    
-    
-    function changeImg1() {
-        var rand = Math.floor((Math.random() * 3) + 1);
-       var img1 = document.getElementById('img1');
-      
-        switch(rand) {
-            case 1 :
-                img1.src = 'cat1.jpg';
-                 img1.value = 1;
-                break;
-            case 2:
-                img1.src = 'khi1.jpg';
-                 img1.value = 2;
-                break;
-            case 3:
-                img1.src = 'panda1.jpg';
-                 img1.value = 3;
-                break;
-        }
-       
-    }
-    function changeImg2() {
-        var rand = Math.floor((Math.random() * 3) + 1);
-       var img2 = document.getElementById('img2');
-        switch(rand) {
-            case 1 :
-                img2.src = 'cat2.jpg';
-                 img2.value = 1;
-                break;
-            case 2:
-                img2.src = 'khi2.jpg';
-                 img2.value = 2;
-                break;
-            case 3:
-                img2.src = 'panda2.jpg';
-                img2.value = 3;
-                break;
-        }
-        
-    }
-    function changeImg3() {
-        var rand = Math.floor((Math.random() * 3) + 1);
-       var img3 = document.getElementById('img3');
-        switch(rand) {
-            case 1 :
-                img3.src = 'cat3.jpg';
-                 img3.value = 1;
-                break;
-            case 2:
-                img3.src = 'khi3.jpg';
-                 img3.value = 2;
-                break;
-            case 3:
-                img3.src = 'panda3.jpg';
-                 img3.value = 3;
-                break;
-        }
-       
-    }
-function clickOK(){
+    <script>
+        let img1 = document.getElementById('img1');
+        let img2 = document.getElementById('img2');
+        let img3 = document.getElementById('img3');
 
-    if (img1.value == img2.value && img1.value == img3.value)  {
-      alert('dung roi');
-    }
-}
-    
-   
-</script>
+
+        function changeImg1() {
+            var rand = Math.floor((Math.random() * 3) + 1);
+            var img1 = document.getElementById('img1');
+
+            switch (rand) {
+                case 1:
+                    img1.src = 'cat1.jpg';
+                    img1.value = 1;
+                    break;
+                case 2:
+                    img1.src = 'khi1.jpg';
+                    img1.value = 2;
+                    break;
+                case 3:
+                    img1.src = 'panda1.jpg';
+                    img1.value = 3;
+                    break;
+            }
+
+        }
+        function changeImg2() {
+            var rand = Math.floor((Math.random() * 3) + 1);
+            var img2 = document.getElementById('img2');
+            switch (rand) {
+                case 1:
+                    img2.src = 'cat2.jpg';
+                    img2.value = 1;
+                    break;
+                case 2:
+                    img2.src = 'khi2.jpg';
+                    img2.value = 2;
+                    break;
+                case 3:
+                    img2.src = 'panda2.jpg';
+                    img2.value = 3;
+                    break;
+            }
+
+        }
+        function changeImg3() {
+            var rand = Math.floor((Math.random() * 3) + 1);
+            var img3 = document.getElementById('img3');
+            switch (rand) {
+                case 1:
+                    img3.src = 'cat3.jpg';
+                    img3.value = 1;
+                    break;
+                case 2:
+                    img3.src = 'khi3.jpg';
+                    img3.value = 2;
+                    break;
+                case 3:
+                    img3.src = 'panda3.jpg';
+                    img3.value = 3;
+                    break;
+            }
+
+        }
+        function clickOK() {
+
+            if (img1.value == img2.value && img1.value == img3.value) {
+                alert('dung roi');
+            }
+        }
+
+
+    </script>
 </body>
+
 </html>
