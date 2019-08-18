@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var day = new Date().toLocaleTimeString();
+        // var yea = new Date().toDateString();
+        // // // console.log(day);
+        // console.log(yea);
+        // console.log(yea.getYear());
+        // var Xmas = new Date('December 25, 1995 23:15:00');
+        // console.log(Xmax.getYear())
+
+        var d = new Date(1994, 01, 01);
+        var dd = new Date();
+        // console.log(d);
+        // console.log(dd);
+        // var y = d.getFullYear();
+        // console.log(y);
+        // var yy = dd.getFullYear();
+        // console.log(yy);
+        // console.log('Tôi đã sống: ' + (yy - y) + ' năm');
+        // var m = d.getMonth();
+        // console.log(m);
+        var total = dd.getTime() - d.getTime();
+        var yearr = total / 1000 / 60 / 60 / 24 / 30 / 12;
+        console.log('Tôi đã sống: ' + (Math.floor(yearr)) + ' năm');
+        var mon = total / 1000 / 60 / 60 / 24 / 30;
+        console.log('Tôi đã sống: ' + (Math.floor(mon)) + ' tháng');
+        var da = total / 1000 / 60 / 60 / 24;
+        console.log('Tôi đã sống: ' + (Math.floor(da)) + ' ngày');
+        var h = total / 1000 / 60 / 60;
+        console.log('Tôi đã sống: ' + (Math.floor(h)) + ' giờ');
+        var mi = total / 1000 / 60;
+        console.log('Tôi đã sống: ' + (Math.floor(mi)) + ' phút');
+        var g = total / 1000;
+        console.log('Tôi đã sống: ' + (Math.floor(g)) + ' giây');
+    </script>
+</body>
+
+</html>

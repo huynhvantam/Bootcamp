@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "Tôi        yêu        ngôn        ngữ lập trình Javascript";
+        var count = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] === "a") {
+                count++;
+            }
+        }
+        document.write(count);
+        // -----------------
+        // console.log(str.split(""));
+        var arra = str.split(" ");
+        console.log(arra);
+        var count1 = 0;
+        var regex = /^[a-zA-Zôêữậì]/;
+        for (var i = 0; i < str.length; i++) {
+            if (regex.test(str[i])) {
+                count1++;
+            }
+        }
+        console.log(count1);
+        console.log(str.replace("Javascript", "Typescript"));
+        console.log(str);
+    </script>
+</body>
+
+</html>

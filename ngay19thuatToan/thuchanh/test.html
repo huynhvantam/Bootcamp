@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [3, 1, 2, 4];
+        var min;
+        var gan;
+        for (var i = 0; i < arr.length; i++) {
+            min = i;
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                    // console.log(arr[min]);
+                }
+            }
+            if (arr[min] != arr[i]) {
+                gan = arr[min]; //3 i =3 min1// gan =3
+                arr[min] = arr[i];
+                arr[i] = gan;
+
+            }
+            // gan = 0;
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>
