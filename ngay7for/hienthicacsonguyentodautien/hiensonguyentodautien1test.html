@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>số nguyên tố</title>
+</head>
+
+<body>
+    <input id="idSNT" type="number">
+    <input id="idclickOK" type="button" onclick="kiem_tra_snt()" value="OK">
+
+
+    <script>
+        // var inputSNT = +prompt("nhap so vao");
+
+        function kiem_tra_snt() {
+
+            var n = +document.getElementById('idSNT').value;
+            var flag = true;
+            var dem = 0;
+            // var n;
+            if (n < 2) {
+                flag = false;
+            }
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    flag = false;
+                }
+            }
+            flag = true;
+            if (flag == true) {
+                document.write(n + " là số nguyên tố <br/>");
+                dem = dem + 1;
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>
