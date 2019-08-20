@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tryRemoveFromArray(array,index) 
+        {
+            let arr = [];
+            for (let i=0; i<array.length; i++) 
+            {
+                if(index >=0 && index < array.length) 
+                {
+                    if (index !== i) 
+                    {
+                        arr[arr.length] = array[i];
+                    }
+                } 
+                else
+                    arr[arr.length] = array[i];
+            }
+            document.write("Mảng đã cho : " + "<br>" + array + "<br>");
+            document.write("Phần tử cần loại bỏ tạo vị trí " + index + "<br>");
+            document.write("Mảng mới sau khi đã loại bỏ phần tử tại vị trí " + index + " là : " + "<br>" + arr + "<br>");
+            document.write("<br>");
+        }
+        
+        let array1 = [12, 6, 3, 7, 21, 5, 7];
+        let index1 = 2;
+        tryRemoveFromArray(array1,index1);
+        let array2 = [12, 6, 3, 7, 21, 5, 7];
+        let index2 = 0;
+        tryRemoveFromArray(array2,index2);
+        let array3 = [12, 6, 3, 7, 21, 5, 7];
+        let index3 = 7;
+        tryRemoveFromArray(array3,index3)
+        let array4 = [12, 6, 3, 7, 21, 5, 7];
+        let index4 = -2;
+        tryRemoveFromArray(array4,index4);
+    </script>
+</body>
+</html>
