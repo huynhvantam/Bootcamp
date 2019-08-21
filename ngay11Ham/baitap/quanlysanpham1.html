@@ -9,20 +9,26 @@
 </head>
 
 <body>
-    <input id="inputtxt" type="text">
-    <button onclick="functionadd()">add</button>
-    <p id="lish"></p>
-
+    <input ty pe="text" id="inputelement">
+    <button onclick="addPro(list)">Add</button>
+    <p id="list-data"></p>
+    <table>
+        <tr>
+            <td>listnew</td>
+        </tr>
+    </table>
     <script>
-        // var b = document.getElementById('list');
-        // var data = '';
         var list = [];
-        var numb = 0;
+        var listRender = document.getElementById('list-data');
 
-        function functionadd() {
-            list[numb] = document.getElementById('inputtxt').value;
-            numb++;
-            document.getElementById('inputtxt').value = '';
+        function render(arr) {
+            for (var i = 0; i < list.length; i++) {
+                listnew[i] = list[i];
+            }
+        }
+        var data = "";
+        for (i = 0; i < listnew.length; i++) {
+            data
         }
     </script>
 </body>

@@ -10,19 +10,19 @@
 
 <body>
     <script>
-        var a = prompt('nhap a');
-
-        function test(a) {
-            var a = prompt('nhap a');
-
-            if (a < 2) {
-                return false;
-            } else if (a === 2) {
-                return true;
-            } else if (a % 2 === 0) {
-                return
+        function sum_even_numbers() {
+            var sum = 0;
+            for (var i = 0; i <= 6; i++) {
+                if (i % 2 === 0) {
+                    sum += i;
+                    console.log(sum)
+                }
             }
+
+            return sum;
+
         }
+        console.log(sum_even_numbers());
     </script>
 </body>
 
