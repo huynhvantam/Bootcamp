@@ -1,3 +1,21 @@
+Skip to content
+
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@huynhvantam
+0
+0 0 huynhvantam/Bootcamp
+Code Issues 0 Pull requests 0 Projects 0 Wiki Security Insights Settings
+Bootcamp/case study/index.html
+@huynhvantam huynhvantam a
+2494022 5 days ago
+192 lines (173 sloc) 5.9 KB
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +39,8 @@
         var ballRadius = 10;
         var x = canvas.width / 2;
         var y = canvas.height - 30;
-        var dx = 10
-        var dy = -10
+        var dx = 2
+        var dy = -2
         var paddleHeight = 10;
         var paddleWidth = 75;
         var paddleX = (canvas.width - paddleWidth) / 2;
@@ -37,7 +55,6 @@
         var brickOffsetLeft = 30;
         var score = 0;
         var lives = 3;
-
         var bricks = [];
         for (c = 0; c < brickColumnCount; c++) {
             bricks[c] = [];
@@ -49,7 +66,6 @@
                 };
             }
         }
-
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
         document.addEventListener("mousemove", mouseMoveHandler, false);
@@ -150,7 +166,6 @@
             drawScore();
             drawLives();
             collisionDetection();
-
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
             }
@@ -173,20 +188,29 @@
                     }
                 }
             }
-
             if (rightPressed && paddleX < canvas.width - paddleWidth) {
                 paddleX += 7;
             } else if (leftPressed && paddleX > 0) {
                 paddleX -= 7;
             }
-
             x += dx;
             y += dy;
             requestAnimationFrame(draw);
         }
-
         draw();
     </script>
 </body>
 
 </html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

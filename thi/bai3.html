@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = parseInt(prompt('inputnumber'));
+
+        function isPerfectNumber() {
+            if (isNaN(number)) {
+                return alert("it's not an number")
+            }
+            var check = 0;
+            var flag = false;
+            for (var i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    check += i;
+                }
+            }
+            if (check / 2 === number) {
+                return flag = true;
+            } else {
+                return flag = false;
+            }
+        }
+        document.write(isPerfectNumber(number))
+    </script>
+
+</body>
+
+</html>
