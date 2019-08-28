@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <img id="img" src="" style="display: none" alt="The Dragon">
+    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        class Animal {
+
+            constructor(x, y, name, width, height, image) {
+                this.x = x;
+                this.y = y;
+                this.name = name;
+                this.w = width;
+                this.h = height;
+                this.image = image;
+            }
+
+
+            render() {
+                document.getElementById("img").src = this.image;
+                window.onload = function () {
+
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    var img = document.getElementById("img");
+                    ctx.drawImage(img, 50, 50, 200, 100);
+                }
+            }
+        }
+
+
+        var Dragon = new Animal(50, 50, "dragon", 200, 100, "pikachu.png");
+        Dragon.render();
+    </script>
+
+</body>
+
+</html>

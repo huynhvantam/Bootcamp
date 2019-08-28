@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var leng = parseInt(prompt('Nhập kích thước mảng'));
+        var arr = [];
+        for (var i = 0; i < leng; ++i) {
+            arr[i] = Math.floor(Math.random() * 101);
+        }
+
+        function findMax(array) {
+            if (array.length < 1) {
+                alert('Mảng rỗng');
+
+            }
+            let max = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
+            }
+            document.write('Mảng ngẫu nhiên: [' + array + ']<br>');
+            document.write('Số lớn nhất trong mảng: ' + max);
+            document.write('<br>');
+        }
+
+        findMax(arr);
+    </script>
+</body>
+
+</html>

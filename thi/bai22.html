@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var leng = parseInt(prompt('Nhập kích thước mảng'));
+        var arr = [];
+        for (var i = 0; i < leng; i++) {
+            var number = +prompt('nhap phan tu thu ' + i);
+            arr.push(number);
+        }
+        var inde = parseInt(prompt('vi Tri index can doi'));
+        var valu = +prompt('nhap gia tri can thay doi:');
+
+        function tryAddFromArray(array, val, ind) {
+            if (array.length < 0) {
+                alert('mang rong')
+            }
+            if (ind < 0 || ind > (array.length - 1)) {
+                return document.write('mang cu: [' +
+                    array + ']<br>');
+
+            } else {
+                array.splice(ind, 0, val);
+                return document.write('mang moi: [' +
+                    array + ']<br>');
+            }
+
+        }
+
+        tryAddFromArray(arr, valu, inde);
+    </script>
+</body>
+
+</html>

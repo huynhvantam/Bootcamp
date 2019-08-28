@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas 2D</title>
+    <style>
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="1200 " height="500"></canvas>
+    <img id="scream" src="pikachu.png" alt="The Scream" width="220" height="277">
+    <p><button onclick="myCanvas()">Try it</button></p>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // ctx.moveTo(0, 0);
+        // ctx.lineTo(200, 100);
+        // ctx.stroke();
+        // // ĐƯỜNG THẲNG
+        // ctx.beginPath();
+        // ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        // ctx.stroke();
+        // // HÌNH TRÒN
+        // ctx.font = "30px Arial";
+        // ctx.fillText("Hello World", 100, 50);
+        // // CHỮ
+        // ctx.font = "30px Arial";
+        // ctx.strokeText("Hello World", 200, 100);
+        // //CHỮ
+        // // Create gradient
+        // var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        // grd.addColorStop(0, "blue");
+        // grd.addColorStop(1, "red");
+
+        // // Fill with gradient
+        // ctx.fillStyle = grd;
+        // ctx.fillRect(10, 10, 150, 80);
+        // // 2 dayx mau
+        // function myCanvas() {
+        //     var c = document.getElementById("myCanvas");
+        //     var ctx = c.getContext("2d");
+        //     var img = document.getElementById("scream");
+        //     ctx.drawImage(img, 10, 10);
+        // }
+        // // truyền ảnh vào bằng click
+
+        // ctx.rect(500, 30, 50, 50);
+        // ctx.rect(900, 50, 50, 50);
+        // // ctx.fillStyle = "#FF0000";
+        // ctx.fill();
+        // ctx.beginPath();
+        // ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
+        // ctx.fillStyle = "green";
+        // ctx.fill();
+        // ctx.closePath();
+        // //  beginPath và closePath bắt đầu 1 hình mới ko nó sẽ sử dụng chung
+        // //fill dùng đễ vẽ ra
+        // ctx.beginPath();
+        // ctx.rect(160, 10, 100, 40);
+        // ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+        // ctx.stroke();
+        // ctx.closePath();
+        // // stroke tô màu khung thôi
+        // function drawBall() {
+        //     ctx.beginPath();
+        //     ctx.arc(x, y, 10, 0, Math.PI * 2);
+        //     ctx.fillStyle = "#0095DD";
+        //     ctx.fill();
+        //     ctx.closePath();
+        // }
+
+        // function draw() {
+        //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //     drawBall();
+        //     x += dx;
+        //     y += dy;
+        // }
+        // setInterval(draw, 100);
+        var x = canvas.width / 2;
+        var y = canvas.height - 30;
+        var dx = 2;
+        var dy = -2;
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+        var paddleX = (canvas.width - paddleWidth) / 2;
+        var rightPressed = false;
+        var leftPressed = false;
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            x += dx;
+            y += dy;
+            var ballRadius = 10;
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                dx = -dx;
+            }
+            if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+                dy = -dy;
+            }
+        }
+        setInterval(draw, 10);
+
+        function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+        setInterval(drawPaddle, 10);
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        function keyDownHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = true;
+            } else if (e.keyCode == 37) {
+                leftPressed = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = false;
+            } else if (e.keyCode == 37) {
+                leftPressed = false;
+            }
+        }
+        if (rightPressed) {
+            paddleX += 7;
+        } else if (leftPressed) {
+            paddleX -= 7;
+        }
+        if (rightPressed && paddleX < canvas.width - paddleWidth) {
+            paddleX += 7;
+        } else if (leftPressed && paddleX > 0) {
+            paddleX -= 7;
+        }
+        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+        }
+
+        if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+            dy = -dy;
+        }
+        if (y + dy < ballRadius) {
+            dy = -dy;
+        } else if (y + dy > canvas.height - ballRadius) {
+            alert("GAME OVER");
+            document.location.reload();
+        }
+        if (y + dy < ballRadius) {
+            dy = -dy;
+        } else if (y + dy > canvas.height - ballRadius) {
+            if (x > paddleX && x < paddleX + paddleWidth) {
+                dy = -dy;
+            } else {
+                alert("GAME OVER");
+                document.location.reload();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

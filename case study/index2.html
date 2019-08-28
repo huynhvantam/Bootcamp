@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+<style>
+    canvas {
+        background: #eee;
+    }
+</style>
+
+<body>
+    <script>
+        // lấy được thẻ canvas trong body của html
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // gán x, y tọa độ tâm quả bóng
+        var x = canvas.width / 2;
+        var y = canvas.height - 30;
+
+        // dx dy thể hiện sự thay đổi của giá trị x y càng cao thì càng nhanh
+        var dx = 5
+        var dy = -5
+
+        // kích thước quả bóng
+        var ballRadius = 10;
+
+        // kích thước thanh trượt,nhưng nó không quyết định kích thước thật, chỉ là phần nổi
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+
+        // vị trí của thanh trượt, nằm ở giữa
+        var paddleX = (canvas.width - paddleWidth) / 2;
+
+        //sự kiện di chuyển thanh trượt trái phải, mặc định cho flase
+        var rightPressed = false;
+        var leftPressed = false;
+
+        // 5 hàng ngang, 3 hàng dọc
+        var brickRowCount = 5;
+        var brickColumnCount = 3;
+        // độ rồng và dài
+        var brickWidth = 75;
+        var brickHeight = 20;
+        // độ cách xa nhau của các gạch
+        var brickPadding = 10;
+        // tọa độ bắt đầu của tấm gạch thứ nhất
+        var brickOffsetTop = 30;
+        var brickOffsetLeft = 30;
+        // điểm và mạng
+        var score = 0;
+        var lives = 3;
+
+
+        // hàm tạo hình quả bóng
+        //  begin close Path bắt đầu làm mới canvas sau đó đóng lại hàm 
+        //  không để những hàm khác ảnh hưởng tới hàm này
+        //  arc, x y toa do, ballradius kich thuoc bong , 0 va math, để làm tròn quả bóng
+        // fillstyle là màu
+        // fill để vẽ canvas
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+            ctx.fillStyle = "purple";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // hàm thanh trượt
+        function drawPaddle() {
+            ctx.beginPath();
+            // hàm rect là hình chữ nhật, tọa độ bắt đầu, và kích thước của nó
+            ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // để có thể điều khiển keyboard, 
+        // để có thể điều khiển keyboard, 
+        // 2 listener để lắng nghe sự kiện keyup keydown. là sự kiện nhấn nút
+        //2 function để xử lý vụ keyup keydown thì sẽ cập nhật 2 biến lưu giá trị up, down như thế nào
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+        // document.addEventListener("mousemove", mouseMoveHandler, false);
+
+        // 2 hàm nhấn nút, nếu nhán quay về, thì cho biến di chuyển  left rightPessed true
+        function keyDownHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = true;
+            } else if (e.keyCode == 37) {
+                leftPressed = true;
+            }
+        }
+        // khi thả phim thì 2 biến di chuyển false
+        function keyUpHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = false;
+            } else if (e.keyCode == 37) {
+                leftPressed = false;
+            }
+        }
+
+        // tạo 1 mảng để chứa giá trị các viên gạch
+        var bricks = [];
+        //Đầu tiên thì dùng 2 vòng for lồng nhau để có thể định nghĩa đc một mảng 2 chiều
+        for (c = 0; c < brickColumnCount; c++) {
+            bricks[c] = [];
+            for (r = 0; r < brickRowCount; r++) {
+                bricks[c][r] = {
+                    x: 0,
+                    y: 0,
+                    status: 1
+                };
+            }
+        }
+
+        // hàm vẽ gạch
+        // tạo mảng 2 chiều sau đó thì 
+        function drawBricks() {
+            for (c = 0; c < brickColumnCount; c++) {
+                for (r = 0; r < brickRowCount; r++) {
+                    if (bricks[c][r].status == 1) {
+                        var brickX = (r * (brickWidth + brickPadding)) + brickOffsetLeft;
+                        var brickY = (c * (brickHeight + brickPadding)) + brickOffsetTop;
+                        bricks[c][r].x = brickX;
+                        bricks[c][r].y = brickY;
+                        ctx.beginPath();
+                        ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                        ctx.fillStyle = "green";
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+                }
+            }
+        }
+
+        //hàm thiết lập va chạm
+        //2 vòng for để duyệt hết mảng 2 chiều "gạch". 
+        //Làm 1 biến b để lưu chính xác nó là phần tử nào trong mảng.
+        function collisionDetection() {
+            for (c = 0; c < brickColumnCount; c++) {
+                for (r = 0; r < brickRowCount; r++) {
+                    var b = bricks[c][r];
+
+                    //Nếu tâm của quá bóng nằm trong tọa độ của 1 trong số những viên gạch,
+                    // chúng ta sẽ chuyển hướng di chuyển của bóng
+                    // Tọa độ x của bóng lơn hơn tọa độ y của gạch
+                    // Tọa độ x của bóng bé hơn tao độ x của gạch + chiều rộng của gạch
+                    // Tọa đọ y của bóng lơn hơn tạo độ y của gạch
+                    // Tọa độ y của bóng bé hơn tạo độ y của gạch + chiều cao của gạch
+                    if (b.status == 1) {
+                        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                            dy = -dy;
+                            b.status = 0;
+                            score++;
+                            if (score == brickRowCount * brickColumnCount) {
+                                alert("YOU WIN, CONGRATS!");
+                                document.location.reload();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        // hàm tính điểm
+        // fillText , score hiển thị trên canvas, hiện thị theo biến score, 2 tọa chữ 
+        function drawScore() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Score: " + score, 8, 20);
+        }
+
+        // hàm mạng 
+        // fillText , live hiển thị trên canvas, hiện thị theo biến lives, 2 tọa chữ 
+        function drawLives() {
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "red";
+            ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+        }
+
+        function draw() {
+            //clearRect xóa canvas trước khi vẽ frame mới
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // gọi hàm tạo bóng
+            drawBall();
+
+            drawBricks();
+
+            // render được hình vẽ tấm ván và vị trí của nó
+            drawPaddle();
+
+            // 2 gọi hàm điểm và mạng
+            drawScore();
+            drawLives();
+
+            // update biến trạng thái của gạch
+            collisionDetection();
+
+            //bóng di chuyển trái phải
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                dx = -dx;
+            }
+
+            //bóng di chuyển lên xuống
+            // kiểm tra đụng tườn, nếu chạm vào thì đẩy ngược bóng lại
+
+            if (y + dy < ballRadius) {
+                dy = -dy;
+                // hoặc nếu chạm tấm ván thì nó sẽ bật lại    
+
+            } else if (y + dy > canvas.height - ballRadius) {
+                if (x > paddleX && x < paddleX + paddleWidth) {
+                    dy = -dy;
+                    //  hoặc bức tường ở dưới, nếu chạm vào nó thì sẽ mất lives khi lives hết thì game over
+                } else {
+                    lives--;
+                    if (!lives) {
+                        alert("GAME OVER");
+                        document.location.reload();
+
+                    }
+                    // sau đó gán vị trí x y và tốc độ cho mạng mới
+                    else {
+                        x = canvas.width / 2;
+                        y = canvas.height - 30;
+                        dx = 3;
+                        dy = -3;
+                        paddleX = (canvas.width - paddleWidth) / 2;
+                    }
+                }
+            }
+
+            // điều kiện khi nhấn vào thì thanh trượt sẽ tăng or giảm giá trị
+            if (rightPressed && paddleX < canvas.width - paddleWidth) {
+                paddleX += 7;
+            } else if (leftPressed && paddleX > 0) {
+                paddleX -= 7;
+            }
+
+
+            // x và y sẽ được update mỗi lần frame thay đổi
+            x += dx;
+            y += dy;
+            // hàm requestAnimetionFrame  dùng để update hàm draw 60 lần mỗi giây
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+
+</html>
