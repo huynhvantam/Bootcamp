@@ -13,12 +13,12 @@
     <h1>Bouncing Ball Game</h1>
     <canvas id="myCanvas" width="480" height="320" style=" background: #eee;"></canvas>
     <script>
-        //Biến ctx được tạo để lưu lại nội dung render 2D
+        // Biến ctx được tạo để lưu lại nội dung render 2D
         // lấy được id từ thẻ canvas trong body của html
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         // ĐỊNH NGHĨA MỘT QUẢ BÓNG
-        // gán x, y tọa độ tâm quả bóng
+        // gán x, y tọa độ tâm quả bóng vị trí bắt đầu
         // dx dy thể hiện sự thay đổi của giá trị x y khi quả bóng di chuyển, càng cao thì bóng càng nhanh
         // ballRadius kích thước quả bóng
         var x = canvas.width / 2;
@@ -26,7 +26,7 @@
         var dx = 5
         var dy = -5
         var ballRadius = 10;
-        // hàm tạo hình quả bóng
+        // hàm tạo drawBall vẽ hình quả bóng
         //  2 phương thức begin close Path để thiết lập canvas tại hàm hiện tại
         //  không để những hàm khác ảnh hưởng tới hàm này
         //  arc vẽ hình tròn, x y toa do, ballradius ban kinh , 0 va math, để làm tròn quả bóng
@@ -46,7 +46,7 @@
         var paddleHeight = 10;
         var paddleWidth = 75;
         var paddleX = (canvas.width - paddleWidth) / 2;
-        // hàm thanh trượt
+        // tạo hàm drawPaddle vẽ hình thanh trượt
         function drawPaddle() {
             ctx.beginPath();
             // hàm rect là hình chữ nhật, tọa độ bắt đầu ngang, dọc và kích thước của nó
@@ -82,15 +82,13 @@
         // tính điểm và mạng
         var score = 0;
         var lives = 3;
-        // vẽ một text băng canvas
-        // fillText , score hiển thị trên canvas, hiện thị theo biến score, 2 tọa chữ 
+        // sử dụng fillText vẽ một text băng canvas
         function drawScore() {
             ctx.font = "16px Arial";
             ctx.fillStyle = "black";
             ctx.fillText("Score: " + score, 8, 20);
         }
-        // hàm mạng 
-        // fillText , live hiển thị trên canvas, hiện thị theo biến lives, 2 tọa chữ 
+
         function drawLives() {
             ctx.font = "16px Arial";
             ctx.fillStyle = "red";
@@ -101,7 +99,7 @@
         // 5 hàng ngang, 3 hàng dọc
         var brickRowCount = 5;
         var brickColumnCount = 3;
-        // độ rồng và dài
+        // độ rồng và dài từng viên gạch
         var brickWidth = 75;
         var brickHeight = 20;
         // độ cách xa nhau của các gạch
@@ -125,11 +123,11 @@
                 };
             }
         }
-        // hàm vẽ gạch
+        // tạo hàm drawBricks vẽ hình gạch
         function drawBricks() {
             for (c = 0; c < brickColumnCount; c++) {
                 for (r = 0; r < brickRowCount; r++) {
-                    // nếu giá trị của vị trí bricks 0,0 = 1, đúng thì vẽ gạch
+                    // nếu giá trị status của vị trí bricks 0,0 = 1, đúng thì vẽ gạch
                     if (bricks[c][r].status == 1) {
                         var brickX = (r * (brickWidth + brickPadding)) + brickOffsetLeft;
                         var brickY = (c * (brickHeight + brickPadding)) + brickOffsetTop;
@@ -146,7 +144,7 @@
         }
         //hàm phát hiện va chạm
         //2 vòng for để duyệt hết mảng 2 chiều "gạch". 
-        //Làm 1 biến b để lưu chính xác nó là phần tử nào trong mảng.
+        //tạo 1 biến b để lưu chính xác nó là phần tử nào trong mảng.
         function collisionDetection() {
             for (c = 0; c < brickColumnCount; c++) {
                 for (r = 0; r < brickRowCount; r++) {
@@ -164,7 +162,6 @@
                             score++;
                             if (score == brickRowCount * brickColumnCount) {
                                 alert("YOU WIN, CONGRATS!");
-                                //document.location.reload dùng để tải lại trang
                                 document.location.reload();
                             }
                         }
@@ -172,7 +169,6 @@
                 }
             }
         }
-
         //================================================================================
         function draw() {
             //clearRect xóa các nội dung canvas được vẽ trước đó, trước khi vẽ khung mới
@@ -194,11 +190,10 @@
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
                 dx = -dx;
             }
-
             //y + dy < ballRadius tường trên
             if (y + dy < ballRadius) {
                 dy = -dy;
-                // hoặc nếu chạm tấm ván thì nó sẽ bật lại
+                // hoặc nếu chạm thanh trượt thì nó sẽ bật lại
                 // y + dy > canvas.height là tường dưới
             } else if (y + dy > canvas.height - ballRadius) {
                 if (x > paddleX && x < paddleX + paddleWidth) {
@@ -228,8 +223,6 @@
             } else if (leftPressed && paddleX > 0) {
                 paddleX -= 7;
             }
-
-
             // x và y sẽ được update mỗi lần khung thay đổi
             x += dx;
             y += dy;
