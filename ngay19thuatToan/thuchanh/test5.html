@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        dao nguoc mang
+    </p>
+    <script>
+        function swap(arr) {
+            // console.log(arr.reverse());
+            var temp;
+            var first = 0;
+            var end = arr.length - 1;
+            while (first < end) {
+                temp = arr[first];
+                arr[first] = arr[end];
+                arr[end] = temp;
+                first++;
+                end--;
+            }
+            console.log(arr);
+        }
+        swap([1, 2, 3, 5, 2, 1, 6, 2, 4]);
+    </script>
+</body>
+
+</html>

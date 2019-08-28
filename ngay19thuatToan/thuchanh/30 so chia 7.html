@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>tong 30 so chia 7</p>
+    <p id="output"></p>
+    <script>
+        function total(number) {
+            var sum = 0;
+            var count = 0;
+            for (var i = 1;; i++) {
+                if (i % 7 === 0) {
+                    sum += 7;
+                    count++;
+                    console.log(count);
+
+                }
+                if (count === number) {
+                    break;
+                }
+
+            }
+            return console.log(sum);
+        }
+        total(30);
+    </script>
+
+</body>
+
+</html>

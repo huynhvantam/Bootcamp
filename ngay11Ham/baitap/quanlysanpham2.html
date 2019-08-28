@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <style>
+        table {
+            width: 200px;
+            border: solid black 1px;
+        }
+    </style> -->
+    <input type="text" id="inputelement">
+    <button onclick="addPro(list);">AddProduct</button>
+    <!-- <button onclick="deletefuntion();">Delete</button> -->
+    <!-- <button onclick="editfuntion();">Edit</button> -->
+    <table id="list-data" style="padding: 8px;">
+
+    </table>
+
+    <script>
+        var list = [];
+        var listRender = document.getElementById('list-data');
+
+        function render(arr) {
+            var listnew = [];
+            for (var i = 0; i < list.length; i++) {
+                listnew[i] = list[i]
+            }
+            var data = "";
+            for (i = 0; i < listnew.length; i++) {
+                data += '<td>' + listnew[i] + '<td> <button onclick="deletefuntion(' + i +
+                    ');">DeleteProduct</button> </td> ' + ' <td> <button onclick="editfuntion(' + i +
+                    ');">EditProduct</button> </td>' + '</tr>'
+            }
+
+            // data += '</table>'
+            console.log(data);
+            listRender.innerHTML = data;
+        }
+
+        function addPro(arr) {
+            var check = document.getElementById('inputelement').value;
+            if (check === "") {
+                alert("there gotta be something to add inside this list right ? ")
+                return;
+            }
+            arr.push(check);
+            document.getElementById('inputelement').value = "";
+            render(arr);
+        }
+
+        function deletefuntion(index) {
+            list.splice(index, 1)
+            render(list);
+        }
+
+        function editfuntion(index) {
+            list[index] = prompt('change to ?: ')
+            render(list);
+        }
+    </script>
+</body>
+
+</html>
