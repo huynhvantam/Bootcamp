@@ -7,12 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<canvas id="myCanvas" width="480" height="320"></canvas>
-<style>
-    canvas {
-        background: #eee;
-    }
-</style>
+<h1>Bouncing Ball Game</h1>
+<canvas id="myCanvas" width="480" height="320" style=" background: #eee;"></canvas>
 
 <body>
     <script>
@@ -29,11 +25,11 @@
         var dy = -5
         var ballRadius = 10;
         // hàm tạo hình quả bóng
-        //  begin close Path bắt đầu làm mới canvas sau đó đóng lại hàm 
+        //  begin close Path để thiết lập canvas tại hàm hiện tại
         //  không để những hàm khác ảnh hưởng tới hàm này
-        //  arc, x y toa do, ballradius kich thuoc bong , 0 va math, để làm tròn quả bóng
-        // fillstyle là màu
-        // fill để vẽ canvas
+        //  arc vẽ hình tròn, x y toa do, ballradius ban kinh , 0 va math, để làm tròn quả bóng
+        // fillstyle là màu tím
+        // fill để đổ màu tìm
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -42,8 +38,7 @@
             ctx.closePath();
         }
         //================================================================================
-        //TẠO MỘT TẤM VÁN ĐỂ BÓNG NẢY LÊN
-        // kích thước thanh trượt,nhưng nó không quyết định kích thước thật, chỉ là phần nổi
+        //TẠO THANH TRƯỢT ĐỂ BÓNG NẢY LÊN
         // paddleX vị trí của thanh trượt, nằm ở giữa
         var paddleHeight = 10;
         var paddleWidth = 75;
@@ -51,7 +46,7 @@
         // hàm thanh trượt
         function drawPaddle() {
             ctx.beginPath();
-            // hàm rect là hình chữ nhật, tọa độ bắt đầu, và kích thước của nó
+            // hàm rect là hình chữ nhật, tọa độ bắt đầu ngang, dọc và kích thước của nó
             ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
             ctx.fillStyle = "yellow";
             ctx.fill();
@@ -59,6 +54,7 @@
         }
         //================================================================================
         //sự kiện di chuyển thanh trượt trái phải, mặc định cho flase
+        // pressed là bấm trái phải
         var rightPressed = false;
         var leftPressed = false;
         // 2 listener để lắng nghe sự kiện keyup keydown. là sự kiện nhấn nút
@@ -85,7 +81,7 @@
         //THIẾT LẬP BIẾN "VIÊN GẠCH"
         // 5 hàng ngang, 3 hàng dọc
         var brickRowCount = 5;
-        var brickColumnCount = 5;
+        var brickColumnCount = 3;
         // độ rồng và dài
         var brickWidth = 75;
         var brickHeight = 20;
@@ -110,8 +106,8 @@
                 };
             }
         }
+        // console.log(bricks);
         // hàm vẽ gạch
-        // tạo mảng 2 chiều sau đó thì 
         function drawBricks() {
             for (c = 0; c < brickColumnCount; c++) {
                 for (r = 0; r < brickRowCount; r++) {
@@ -185,11 +181,11 @@
             drawBall();
             // gọi hàm gạch
             drawBricks();
-            // update biến trạng thái của gạch va chạm
+            // gọi hàm va chạm
             collisionDetection();
-            // render được hình vẽ tấm ván và vị trí của nó
+            // gọi vẽ thanh trượt 
             drawPaddle();
-            // 2 gọi hàm điểm và mạng
+            //  gọi 2 hàm điểm và mạng
             drawScore();
             drawLives();
             //================================================================================
@@ -208,12 +204,10 @@
                     dy = -dy;
                     //  hoặc bức tường ở dưới, nếu chạm vào nó thì sẽ mất lives khi lives hết thì game over
                 } else {
-
                     lives--;
                     if (!lives) {
                         alert("GAME OVER");
                         document.location.reload();
-
                     }
                     // sau đó gán vị trí x y và tốc độ cho mạng mới
                     else {
